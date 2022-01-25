@@ -259,6 +259,7 @@ GameObject:
   - component: {fileID: 2575124713622730670}
   - component: {fileID: 3003966836654067577}
   - component: {fileID: 50930440590503762}
+  - component: {fileID: 4214635559541770554}
   m_Layer: 7
   m_Name: PlayerLogic
   m_TagString: Player
@@ -364,7 +365,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShootSpot: {fileID: 1653377024}
-  targetBullet: {fileID: 6208209865435483744, guid: c39c423cf9a8cb04596418da9f0efc2b, type: 3}
+  targetBullet: {fileID: 2985503303860696789, guid: 3ba7a19fd172f5c43b64ffbde3bcdcce, type: 3}
 --- !u!114 &50930440590503762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -378,6 +379,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerAnimator: {fileID: 2692339063699801862}
+--- !u!114 &4214635559541770554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3003966837332867123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 451ef52d4a9cecc4bb6126f2836b5a1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootSpeed: 20
 --- !u!1 &3003966837585460312
 GameObject:
   m_ObjectHideFlags: 0
@@ -390,7 +404,7 @@ GameObject:
   - component: {fileID: 6622311719141328591}
   m_Layer: 7
   m_Name: PlayerMaster
-  m_TagString: Untagged
+  m_TagString: PlayerMaster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

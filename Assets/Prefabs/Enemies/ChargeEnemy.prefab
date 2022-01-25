@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1399450}
   - component: {fileID: 1399449}
   - component: {fileID: 1399448}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Logic
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -79,7 +79,7 @@ GameObject:
   m_Component:
   - component: {fileID: 693992060241110787}
   - component: {fileID: 693992060241110786}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Circle
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -161,7 +161,7 @@ GameObject:
   m_Component:
   - component: {fileID: 693992060420401939}
   - component: {fileID: 693992060420401938}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Square
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -242,7 +242,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 693992060483677786}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Visual
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -275,7 +275,7 @@ GameObject:
   m_Component:
   - component: {fileID: 693992061838477636}
   - component: {fileID: 683761190}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ChargeEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}

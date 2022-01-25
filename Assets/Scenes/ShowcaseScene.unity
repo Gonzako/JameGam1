@@ -213,6 +213,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1653377024, guid: 9421841d605c5e349a61a981f859b2ff, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1653377024, guid: 9421841d605c5e349a61a981f859b2ff, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1653377024, guid: 9421841d605c5e349a61a981f859b2ff, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -90
+      objectReference: {fileID: 0}
     - target: {fileID: 3003966837585460312, guid: 9421841d605c5e349a61a981f859b2ff, type: 3}
       propertyPath: m_Name
       value: PlayerMaster

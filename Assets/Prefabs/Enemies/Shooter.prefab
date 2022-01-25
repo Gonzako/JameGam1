@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 449400398583929719}
   - component: {fileID: 8107744728048125046}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sprite
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 1209313176117252494}
   - component: {fileID: 1968173491818423712}
   - component: {fileID: 1549613656195962812}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Logic
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -161,7 +161,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3915421006840095004}
   - component: {fileID: 3915421006840095006}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Shooter
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -210,7 +210,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6287110577791744722}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Visuals
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -243,7 +243,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4491226921621230046}
   - component: {fileID: 9142470137658475505}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Circle
   m_TagString: Enemy
   m_Icon: {fileID: 0}

@@ -7,14 +7,16 @@ public class Shotgun : MonoBehaviour
     public GameObject target;
     public int speed = 7;
     public Rigidbody2D rb;
-    public GameObject bulletPrefab;
+    public Projectile bulletPrefab;
 
     float distance;
     public float followDistance = 5f;
 
     public float lastFired;
     public float cooldown = 2;
-    float[] shootingAngles = {0, 30, -30};
+    float[] shootingAngles = {0, 15, -15};
+    [SerializeField]
+    Transform targetShooter;
 
     private void Start()
     {
@@ -27,7 +29,7 @@ public class Shotgun : MonoBehaviour
     void Update()
     {
         distance = Vector2.Distance(transform.position, target.transform.position);
-
+        targetShooter.right = (target.transform.position - transform.position).normalized;
         if (target != null && distance > followDistance)
         {
             //rb.velocity = (target.transform.position - transform.position).normalized * speed;
@@ -51,16 +53,16 @@ public class Shotgun : MonoBehaviour
         {
             for (int i = 0; i < shootingAngles.Length; i++)
             {
-                Vector2 shootDir = (target.transform.position - transform.position);
-                GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
-                bullet.GetComponentInChildren<Projectile>().direction = RotateVector(shootDir, shootingAngles[i]);
-                bullet.GetComponentInChildren<Projectile>().color = this.GetComponentInChildren<SpriteRenderer>().color;
+
+                Projectile bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+                bullet.direction = targetShooter.GetChild(i).right;
+
             }
         }
 
         lastFired = Time.time;
     }
-
+    /*
     public Vector2 RotateVector(Vector2 vec, float angle)
     {
         // not working properly yet. Cant distinguish between above and below
@@ -70,6 +72,8 @@ public class Shotgun : MonoBehaviour
         angle +=  Vector2.Angle(Vector2.right, vec);
         angle *= Mathf.Deg2Rad;
 
-        return new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
-    }
+        
+
+        return new Vector2(Mathf.Cos(angle),angle>180? Mathf.Sin(angle):-Mathf.Sin(angle));
+    }*/
 }
