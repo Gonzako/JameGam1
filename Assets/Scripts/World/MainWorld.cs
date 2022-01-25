@@ -47,5 +47,7 @@ public class MainWorld : MonoBehaviour
         // get player position
         // check for tilepos (convert to playerpos to tilemappos)
 
+        var playerPos = playerPos
+
     }
 }
