@@ -12,6 +12,8 @@ public class MoveTowards : MonoBehaviour
 
     private void Start()
     {
+        target = GameObject.FindGameObjectWithTag("Player");
+
         rb = GetComponent<Rigidbody2D>();
     }
     void Update()

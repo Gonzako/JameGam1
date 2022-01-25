@@ -7,6 +7,10 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D rb;
     [SerializeField]
     float speed = 5f;
+
+
+    [SerializeField] PlayerAnimationController playerAnimationController;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,5 +23,8 @@ public class PlayerMovement : MonoBehaviour
         var horizontalInput = (Input.GetAxis("Horizontal"));
         var verticalInput = (Input.GetAxis("Vertical"));
         rb.velocity =( new Vector2(MovCurve.Evaluate(horizontalInput)*Mathf.Sign(horizontalInput), MovCurve.Evaluate(verticalInput)*Mathf.Sign(verticalInput)) * speed);
+
+        playerAnimationController.DecideWalkingAnimation(horizontalInput, verticalInput);
+
     }
 }

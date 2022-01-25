@@ -1,31 +1,31 @@
 fileFormatVersion: 2
-guid: 623657c6b4281c74aa79c935400309c4
+guid: f2d3f2083d7c6724ca70690d9eebab1a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8795083357998391700
-    second: marshmallow man_0
+      213: -1681697100637240565
+    second: marshmallow_hurt_0
   - first:
-      213: -6576408166931132436
-    second: marshmallow man_1
+      213: 3392978366690342883
+    second: marshmallow_hurt_1
   - first:
-      213: -5114542315509757942
-    second: marshmallow man_2
+      213: -4038557331891331505
+    second: marshmallow_hurt_2
   - first:
-      213: 7076978318450572566
-    second: marshmallow man_3
+      213: -445479024032052882
+    second: marshmallow_hurt_3
   - first:
-      213: -8713557537862497584
-    second: marshmallow man_4
+      213: 4238547529629710945
+    second: marshmallow_hurt_4
   - first:
-      213: -2251649186108286180
-    second: marshmallow man_5
+      213: -4521491180015865188
+    second: marshmallow_hurt_5
   - first:
-      213: 6716157948772058297
-    second: marshmallow man_6
+      213: -3934011999863279796
+    second: marshmallow_hurt_6
   - first:
-      213: -5516200872341076292
-    second: marshmallow man_7
+      213: -4575026950619622059
+    second: marshmallow_hurt_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -115,7 +115,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: marshmallow man_0
+      name: marshmallow_hurt_0
       rect:
         serializedVersion: 2
         x: 0
@@ -129,14 +129,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c6e5e84c84691f580800000000000000
-      internalID: -8795083357998391700
+      spriteID: b0386b0a56969a8e0800000000000000
+      internalID: -1681697100637240565
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: marshmallow man_1
+      name: marshmallow_hurt_1
       rect:
         serializedVersion: 2
         x: 24
@@ -150,14 +150,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cef87109d97ebb4a0800000000000000
-      internalID: -6576408166931132436
+      spriteID: 3e7b92509d7461f20800000000000000
+      internalID: 3392978366690342883
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: marshmallow man_2
+      name: marshmallow_hurt_2
       rect:
         serializedVersion: 2
         x: 48
@@ -171,14 +171,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a08465facde7509b0800000000000000
-      internalID: -5114542315509757942
+      spriteID: f4e519bf08924f7c0800000000000000
+      internalID: -4038557331891331505
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: marshmallow man_3
+      name: marshmallow_hurt_3
       rect:
         serializedVersion: 2
         x: 72
@@ -192,14 +192,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 61d3362094a763260800000000000000
-      internalID: 7076978318450572566
+      spriteID: e698ea9103751d9f0800000000000000
+      internalID: -445479024032052882
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: marshmallow man_4
+      name: marshmallow_hurt_4
       rect:
         serializedVersion: 2
         x: 96
@@ -213,14 +213,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0da47c1f599331780800000000000000
-      internalID: -8713557537862497584
+      spriteID: 16a303b758852da30800000000000000
+      internalID: 4238547529629710945
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: marshmallow man_5
+      name: marshmallow_hurt_5
       rect:
         serializedVersion: 2
         x: 120
@@ -234,14 +234,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c1bd737bef880c0e0800000000000000
-      internalID: -2251649186108286180
+      spriteID: c92b7184abf6041c0800000000000000
+      internalID: -4521491180015865188
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: marshmallow man_6
+      name: marshmallow_hurt_6
       rect:
         serializedVersion: 2
         x: 144
@@ -255,14 +255,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9b489f71216943d50800000000000000
-      internalID: 6716157948772058297
+      spriteID: c4f660eede49769c0800000000000000
+      internalID: -3934011999863279796
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: marshmallow man_7
+      name: marshmallow_hurt_7
       rect:
         serializedVersion: 2
         x: 168
@@ -276,8 +276,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cb6096e58848273b0800000000000000
-      internalID: -5516200872341076292
+      spriteID: 5559a7a5a3d3280c0800000000000000
+      internalID: -4575026950619622059
       vertices: []
       indices: 
       edges: []

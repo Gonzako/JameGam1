@@ -97,8 +97,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Length: 0
   StartPos: 0
-  camera: {fileID: 0}
-  effectStrength: 0.5
+  objectToFollow: {fileID: 0}
+  effectStrength: 0.8
 --- !u!1 &39904092954563546
 GameObject:
   m_ObjectHideFlags: 0
@@ -196,8 +196,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Length: 0
   StartPos: 0
-  camera: {fileID: 0}
-  effectStrength: 0.4
+  objectToFollow: {fileID: 0}
+  effectStrength: 0.7
 --- !u!1 &39904093042126665
 GameObject:
   m_ObjectHideFlags: 0
@@ -295,8 +295,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Length: 0
   StartPos: 0
-  camera: {fileID: 0}
-  effectStrength: 0.2
+  objectToFollow: {fileID: 0}
+  effectStrength: 0.6
 --- !u!1 &39904093235471529
 GameObject:
   m_ObjectHideFlags: 0
@@ -394,8 +394,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Length: 0
   StartPos: 0
-  camera: {fileID: 0}
-  effectStrength: 0.8
+  objectToFollow: {fileID: 0}
+  effectStrength: 0.9
 --- !u!1 &39904094075782665
 GameObject:
   m_ObjectHideFlags: 0
@@ -493,7 +493,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Length: 0
   StartPos: 0
-  camera: {fileID: 0}
+  objectToFollow: {fileID: 0}
   effectStrength: 1
 --- !u!1 &5084253002753863977
 GameObject:

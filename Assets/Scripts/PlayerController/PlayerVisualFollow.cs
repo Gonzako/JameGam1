@@ -10,7 +10,6 @@ public class PlayerVisualFollow : MonoBehaviour
 
     private void OnEnable()
     {
-
         BasicGameLogic.OnBeginGameplay += EnableTrack;
         BasicGameLogic.OnLeaveGameplay += DisableTrack;
     }

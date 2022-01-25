@@ -18,6 +18,7 @@ public class Shotgun : MonoBehaviour
 
     private void Start()
     {
+        target = GameObject.FindGameObjectWithTag("Player");
         rb = GetComponent<Rigidbody2D>();
         lastFired = Time.time;
     }
