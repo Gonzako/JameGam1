@@ -8,18 +8,18 @@ public class Shotgun : MonoBehaviour
     public int speed = 7;
     public Rigidbody2D rb;
     public GameObject bulletPrefab;
-    public Color bulletColor;
 
     float distance;
     public float followDistance = 5f;
 
     public float lastFired;
     public float cooldown = 2;
-    float[] shootingAngles = {0, 30, -30}; // amount and degrees the shotguns shoots
+    float[] shootingAngles = {0, 30, -30};
 
     private void Start()
     {
-        rb = GetComponentInChildren<Rigidbody2D>();
+        target = GameObject.FindGameObjectWithTag("Player");
+        rb = GetComponent<Rigidbody2D>();
         lastFired = Time.time;
     }
 
@@ -28,8 +28,6 @@ public class Shotgun : MonoBehaviour
     {
         distance = Vector2.Distance(transform.position, target.transform.position);
 
-
-        //moves to player and starts shooting at him with a shotgun
         if (target != null && distance > followDistance)
         {
             //rb.velocity = (target.transform.position - transform.position).normalized * speed;
@@ -56,7 +54,7 @@ public class Shotgun : MonoBehaviour
                 Vector2 shootDir = (target.transform.position - transform.position);
                 GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
                 bullet.GetComponent<Projectile>().direction = RotateVector(shootDir, shootingAngles[i]);
-                bullet.GetComponent<Projectile>().color = bulletColor;
+                bullet.GetComponent<Projectile>().color = this.GetComponent<SpriteRenderer>().color;
             }
         }
 
@@ -65,18 +63,13 @@ public class Shotgun : MonoBehaviour
 
     public Vector2 RotateVector(Vector2 vec, float angle)
     {
+        // not working properly yet. Cant distinguish between above and below
+
         // takes a Vector and rotates it by given angle and returns new vector
          
         angle +=  Vector2.Angle(Vector2.right, vec);
         angle *= Mathf.Deg2Rad;
 
-        var NewVec2 = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
-
-        if (vec.y < 0)  // since it only goes to 180 degree, we need to flip the y here
-        {
-            NewVec2.y *= -1;
-        }
-
-        return NewVec2;
+        return new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
     }
 }

@@ -13,6 +13,7 @@ public class Projectile : MonoBehaviour
 
 
 
+
     void Start()
     {
        
@@ -26,7 +27,13 @@ public class Projectile : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.name != this.gameObject.name && collision.gameObject.tag != "Enemy")
-        Destroy(this.gameObject);
+        if(collision.transform.CompareTag("Player") || collision.transform.CompareTag("Projectile"))
+            Physics2D.IgnoreCollision(collision.transform.GetChild(0).gameObject.GetComponent<Collider2D>(), this.transform.GetChild(0).gameObject.GetComponent<Collider2D>());
+        else
+        {
+            // todo: implement enemy system (example: collision.gameObject.GetComponent<Enemy>().HitEnemy(damageValue);  )
+            Destroy(this.gameObject);
+        }
+            
     }
 }

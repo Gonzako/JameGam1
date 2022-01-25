@@ -7,6 +7,9 @@ public class BasicGameLogic : MonoBehaviour
 {
     public static event Action OnBeginGameplay = null;
     public static event Action OnLeaveGameplay = null;
+
+
+
     // Start is called before the first frame update
     void Start()
     {

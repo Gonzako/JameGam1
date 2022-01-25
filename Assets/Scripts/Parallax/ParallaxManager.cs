@@ -15,6 +15,9 @@ public class ParallaxManager : MonoBehaviour
     {
         StartPos = this.transform.position.x;
         Length = this.GetComponent<SpriteRenderer>().bounds.size.x;
+
+        objectToFollow = GameObject.FindGameObjectWithTag("Player");
+
     }
 
     // Update is called once per frame
