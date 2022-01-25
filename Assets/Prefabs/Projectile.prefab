@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8738473068674305474}
   - component: {fileID: 6960509403628338632}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,7 +70,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 19
   m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 0.40392157}
   m_FlipX: 0
@@ -92,7 +92,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5399619538822770387}
   - component: {fileID: 5929950571868019222}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: HitBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 6208209865435483749}
   - component: {fileID: 6208209865435483744}
   - component: {fileID: 6208209865435483745}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   direction: {x: 1, y: 1}
   speed: 4
-  color: {r: 0, g: 0, b: 0, a: 0}
+  color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!50 &6208209865435483745
 Rigidbody2D:
   serializedVersion: 4
@@ -210,7 +210,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6237557391378921007}
   - component: {fileID: 3253235185317405071}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -291,7 +291,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 202226103506484129}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
