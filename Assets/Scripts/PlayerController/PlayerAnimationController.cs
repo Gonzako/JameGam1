@@ -11,72 +11,88 @@ public class PlayerAnimationController : MonoBehaviour
         playerAnimator.Play(animationTag);
     }
 
-    public void DecideWalkingAnimation(float horizontalInput, float verticalInput)
+    public PlayerState GetMoveState(float horizontalInput, float verticalInput)
     {
+        #region Diagonal Movement
         if (horizontalInput < 0 && verticalInput > 0)
         {
             // walk left up
-            Debug.Log("player_walking_left_up");
             playerAnimator.Play("player_walking_left_up");
+            return PlayerState.IsMoving;
         }
         else
 
         if (horizontalInput > 0 && verticalInput > 0)
         {
             // walk right up
-            Debug.Log("player_walking_right_up");
             playerAnimator.Play("player_walking_right_up");
+            return PlayerState.IsMoving;
         }
         else
 
         if (verticalInput < 0 && horizontalInput < 0)
         {
             // walk left down
-            Debug.Log("player_walking_left_down");
             playerAnimator.Play("player_walking_left_down");
+            return PlayerState.IsMoving;
         }
         else
 
         if (verticalInput < 0 && horizontalInput > 0)
         {
             // walk right down
-            Debug.Log("player_walking_right_down");
             playerAnimator.Play("player_walking_right_down");
-        }else
+            return PlayerState.IsMoving;
+        }
+        else
+        #endregion
+
 
         #region Base Movement
         if (horizontalInput < 0)
         {
             // walk left
-            Debug.Log("player_walking_left");
             playerAnimator.Play("player_walking_left");
-        }else 
+            return PlayerState.IsMoving;
+        }
+        else 
 
         if (horizontalInput > 0)
         {
             // walk right
-            Debug.Log("player_walking_right");
             playerAnimator.Play("player_walking_right");
-        }else 
+            return PlayerState.IsMoving;
+        }
+        else 
 
         if (verticalInput < 0)
         {
             // walk down
-            Debug.Log("player_walking_down");
             playerAnimator.Play("player_walking_down");
-        }else 
+            return PlayerState.IsMoving;
+        }
+        else 
 
         if (verticalInput > 0)
         {
             // walk up
-            Debug.Log("player_walking_up");
             playerAnimator.Play("player_walking_up");
+            return PlayerState.IsMoving;
         }
         #endregion
 
-        #region Diagonal Movement
-        
-        #endregion
+
+        return PlayerState.IsStanding;
+    }
+
+    public void PlayLookAnimation(RotationSectorOnScreen sector)
+    {
+        switch(sector)
+        {
+            case RotationSectorOnScreen.Center:
+                break;
+
+        }
     }
 
 }
