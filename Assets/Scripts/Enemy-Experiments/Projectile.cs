@@ -28,7 +28,7 @@ public class Projectile : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.transform.CompareTag("Player") || collision.transform.CompareTag("Projectile"))
-            Physics2D.IgnoreCollision(collision.collider, this.transform.GetChild(0).gameObject.GetComponent<Collider2D>());
+            Physics2D.IgnoreCollision(collision.transform.GetChild(0).gameObject.GetComponent<Collider2D>(), this.transform.GetChild(0).gameObject.GetComponent<Collider2D>());
         else
         {
             // todo: implement enemy system (example: collision.gameObject.GetComponent<Enemy>().HitEnemy(damageValue);  )

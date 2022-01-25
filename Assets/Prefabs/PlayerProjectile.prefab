@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3253235185317405071, guid: c39c423cf9a8cb04596418da9f0efc2b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 6208209865435483746, guid: c39c423cf9a8cb04596418da9f0efc2b, type: 3}
       propertyPath: m_Name
       value: PlayerProjectile
