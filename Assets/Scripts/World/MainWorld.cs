@@ -73,7 +73,7 @@ public class MainWorld : MonoBehaviour
 
         // check for tiles on the right
 
-        playerPos.x = playerPos.x += 10;
+        playerPos.x = playerPos.x += 24;
 
         var tileMapPos = _baseGroundTileMap.WorldToCell(playerPos);
 
