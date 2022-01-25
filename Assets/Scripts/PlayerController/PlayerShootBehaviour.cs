@@ -24,7 +24,7 @@ public class PlayerShootBehaviour : MonoBehaviour
     public void ShootBullet()
     {
         var projectile = GameObject.Instantiate(targetBullet);
-        projectile.direction = ShootSpot.right;
+        projectile.direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - this.transform.position;
         projectile.transform.position = ShootSpot.position;
         projectile.color = Color.blue;
     }

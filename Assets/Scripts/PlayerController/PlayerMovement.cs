@@ -85,12 +85,22 @@ public class PlayerMovement : MonoBehaviour
         // 8 = Look Right-Down
 
         var mousePosOnScreen = Input.mousePosition;
+        Debug.Log("Raw MousePos: " + mousePosOnScreen);
 
         RotationSectorOnScreen mouseIsInSector = RotationSectorOnScreen.Center;
 
         // todo: decide what sector the mouse is in and play the animation for it
 
+        // draw debug lines to see the sectors visually
+        Vector3 middleLineStart = Camera.main.ScreenToViewportPoint(new Vector3(0, Screen.height/2, 0));
+        Vector3 middleLineEnd = Camera.main.ScreenToViewportPoint(new Vector3(Screen.width, Screen.height/2, 0));
+
+        Debug.DrawLine(middleLineStart, middleLineEnd, Color.green);
+
+
         playerAnimationController.PlayLookAnimation(mouseIsInSector);
 
     }
+
+
 }
