@@ -13,7 +13,6 @@ public class Projectile : MonoBehaviour
 
 
 
-
     void Start()
     {
        
@@ -27,7 +26,7 @@ public class Projectile : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.name != this.gameObject.name)
+        if (collision.gameObject.name != this.gameObject.name && collision.gameObject.tag != "Enemy")
         Destroy(this.gameObject);
     }
 }
