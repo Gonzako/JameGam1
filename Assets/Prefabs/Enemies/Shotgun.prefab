@@ -221,7 +221,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 13
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
   m_Color: {r: 0.9716981, g: 0.24737163, b: 0, a: 1}
   m_FlipX: 0
@@ -314,7 +314,6 @@ MonoBehaviour:
   speed: 2
   rb: {fileID: 0}
   bulletPrefab: {fileID: 6208209865435483746, guid: c39c423cf9a8cb04596418da9f0efc2b, type: 3}
-  bulletColor: {r: 0.972549, g: 0.24705882, b: 0, a: 1}
   followDistance: 4
   lastFired: 0
   cooldown: 2

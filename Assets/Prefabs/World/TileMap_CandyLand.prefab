@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4715675614361391512}
   - component: {fileID: 7255801610131473757}
   m_Layer: 0
-  m_Name: Tilemap
+  m_Name: TileMap_CandyLand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

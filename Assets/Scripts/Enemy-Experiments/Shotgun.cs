@@ -19,7 +19,7 @@ public class Shotgun : MonoBehaviour
     private void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player");
-        rb = GetComponent<Rigidbody2D>();
+        rb = GetComponentInChildren<Rigidbody2D>();
         lastFired = Time.time;
     }
 
@@ -53,8 +53,8 @@ public class Shotgun : MonoBehaviour
             {
                 Vector2 shootDir = (target.transform.position - transform.position);
                 GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
-                bullet.GetComponent<Projectile>().direction = RotateVector(shootDir, shootingAngles[i]);
-                bullet.GetComponent<Projectile>().color = this.GetComponent<SpriteRenderer>().color;
+                bullet.GetComponentInChildren<Projectile>().direction = RotateVector(shootDir, shootingAngles[i]);
+                bullet.GetComponentInChildren<Projectile>().color = this.GetComponentInChildren<SpriteRenderer>().color;
             }
         }
 

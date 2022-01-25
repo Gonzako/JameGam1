@@ -5,13 +5,16 @@ using UnityEngine.Tilemaps;
 
 public class MainWorld : MonoBehaviour
 {
+    [SerializeField] GameObject _playerReference;
+
     [SerializeField] Tilemap _baseGroundTileMap;
     [SerializeField] Tilemap _walkableObjectsTileMap;
     [SerializeField] Tilemap _obstaclesTileMap;
 
+    [SerializeField] TileBase tileSeamToBackground;
     [SerializeField] TileBase baseTileGround;
 
-    [SerializeField] GameObject _playerReference;
+    
 
     private void Awake()
     {
@@ -31,14 +34,33 @@ public class MainWorld : MonoBehaviour
         _walkableObjectsTileMap.DeleteCells(roomStartPosition, roomEndPosition);
         _obstaclesTileMap.DeleteCells(roomStartPosition, roomEndPosition);
 
-        for(int y = -1; y > -7; y--)
+        TileBase tileToCreate = baseTileGround;
+
+        for(int x = -9; x < 25; x++)
         {
-            for(int x = -9; x < 25; x++)
-            {
-                _baseGroundTileMap.SetTile(new Vector3Int(x, y, 0), baseTileGround);
-            }
+            CreateNewDungeonLine(x);
         }
 
+    }
+
+    private void CreateNewDungeonLine(int xPos)
+    {
+        TileBase tileToCreate = baseTileGround;
+
+        // create new tiles on that x level
+        for (int y = 0; y > -7; y--)
+        {
+            if (y == 0)
+            {
+                tileToCreate = tileSeamToBackground;
+            }
+            else
+            {
+                tileToCreate = baseTileGround;
+            }
+
+            _baseGroundTileMap.SetTile(new Vector3Int(xPos, y, 0), tileToCreate);
+        }
     }
 
     // Update is called once per frame
@@ -47,7 +69,19 @@ public class MainWorld : MonoBehaviour
         // get player position
         // check for tilepos (convert to playerpos to tilemappos)
 
-        var playerPos = playerPos
+        var playerPos = _playerReference.transform.position;
+
+        // check for tiles on the right
+
+        playerPos.x = playerPos.x += 10;
+
+        var tileMapPos = _baseGroundTileMap.WorldToCell(playerPos);
+
+        if(_baseGroundTileMap.GetTile(tileMapPos) == null)
+        {
+            CreateNewDungeonLine(Mathf.RoundToInt(playerPos.x));
+        }
+
 
     }
 }
