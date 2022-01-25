@@ -8,6 +8,8 @@ public class Shooter : MonoBehaviour
     public GameObject target;
     public float cooldown = 1;
     public float lastFired;
+    public Color bulletColor;
+
     // Start is called before the first frame update
     void Start()
     {

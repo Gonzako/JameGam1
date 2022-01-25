@@ -8,6 +8,8 @@ public class FourWayShooter : MonoBehaviour
     public GameObject target;
     public float cooldown = 3;
     public float lastFired;
+    public Color bulletColor;
+
 
     Vector2[] shootingDirections = { Vector2.up, Vector2.right, Vector2.down, Vector2.left };
     // Start is called before the first frame update

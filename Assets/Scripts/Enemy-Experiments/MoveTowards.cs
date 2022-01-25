@@ -7,6 +7,8 @@ public class MoveTowards : MonoBehaviour
     public GameObject target;
     public int speed = 7;
     public Rigidbody2D rb;
+    public Color bulletColor;
+
 
     // Update is called once per frame
 
