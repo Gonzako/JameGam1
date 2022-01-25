@@ -9,15 +9,19 @@ public class Projectile : MonoBehaviour
     public Vector2 direction;
     public int speed;
     public Color color;
+    private SpriteRenderer sr;
 
 
 
 
     void Start()
     {
+       
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = direction.normalized * speed;
-        color = GetComponent<SpriteRenderer>().color;
+        sr = GetComponentInChildren<SpriteRenderer>();
+        sr.transform.up = direction.normalized;
+        sr.color = color;
     }
 
 

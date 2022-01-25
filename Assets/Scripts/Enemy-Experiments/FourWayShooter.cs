@@ -33,7 +33,7 @@ public class FourWayShooter : MonoBehaviour
             GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
             bullet.GetComponent<Projectile>().direction = shootingDirections[i];
 
-            bullet.GetComponent<SpriteRenderer>().color = this.GetComponent<SpriteRenderer>().color;
+            bullet.GetComponent<Projectile>().color = this.GetComponent<SpriteRenderer>().color;
             
         }
         
