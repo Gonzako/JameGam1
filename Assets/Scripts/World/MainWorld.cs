@@ -46,9 +46,19 @@ public class MainWorld : MonoBehaviour
         _walkableObjectsTileMap.DeleteCells(roomStartPosition, roomEndPosition);
         _obstaclesTileMap.DeleteCells(roomStartPosition, roomEndPosition);
 
-        for(int y = -1; y > -7; y--)
+        GenerateWorldStart();
 
+        GenerateNextSegment(10);
+
+    }
+
+    void GenerateNextSegment(int startXPos)
+    {
+        int segmentWidth = Random.Range(15, 30);
+
+        for (int y = 0; y > -6; y--)
         {
+            for (int x = startXPos; x < startXPos+segmentWidth; x++)
             {
                 TileBase tileToCreate = baseTileGround;
                 Vector3Int currentTilePos = new Vector3Int(x, y, 0);
