@@ -173,6 +173,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1496373562932591606}
+  - component: {fileID: 2812914049857515484}
   - component: {fileID: 3566034879962105290}
   - component: {fileID: 4945425754876024499}
   m_Layer: 9
@@ -190,12 +191,28 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4177285489150130568}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -0.395, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6449184637272630503}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!114 &2812914049857515484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4177285489150130568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2d297ee3ae2a954d9d844aae95cc526, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  speed: 2
+  rb: {fileID: 0}
+  bulletColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!70 &3566034879962105290
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -209,8 +226,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.513993, y: 1.1156931}
+  m_Offset: {x: -0.43, y: 0}
+  m_Size: {x: 0.513993, y: 1.07}
   m_Direction: 0
 --- !u!50 &4945425754876024499
 Rigidbody2D:
@@ -263,7 +280,7 @@ Transform:
   - {fileID: 8036657969374141922}
   - {fileID: 740224460015882555}
   m_Father: {fileID: 6449184637272630503}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6449184637272630499
 GameObject:
@@ -274,7 +291,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6449184637272630503}
-  - component: {fileID: 6449184637272630502}
   m_Layer: 9
   m_Name: MoveTowardsEnemy
   m_TagString: Enemy
@@ -293,24 +309,8 @@ Transform:
   m_LocalPosition: {x: -4.55, y: -0.27898872, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4839220450911098690}
   - {fileID: 1496373562932591606}
+  - {fileID: 4839220450911098690}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6449184637272630502
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6449184637272630499}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2d297ee3ae2a954d9d844aae95cc526, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  speed: 2
-  rb: {fileID: 0}
-  bulletColor: {r: 1, g: 0, b: 0, a: 1}
