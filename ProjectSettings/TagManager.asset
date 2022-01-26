@@ -48,6 +48,9 @@ TagManager:
   - name: Walls
     uniqueID: 1337205615
     locked: 0
+  - name: Player
+    uniqueID: 1866762663
+    locked: 0
   - name: Particless
     uniqueID: 3941887445
     locked: 0
