@@ -60,7 +60,6 @@ public class MainWorld : MonoBehaviour
         {
             for (int x = startXPos; x < startXPos+segmentWidth; x++)
             {
-                TileBase tileToCreate = baseTileGround;
                 Vector3Int currentTilePos = new Vector3Int(x, y, 0);
 
                 if (y == 0) _obstaclesTileMap.SetTile(currentTilePos, seamTileGround); else _baseGroundTileMap.SetTile(currentTilePos, baseTileGround);
@@ -70,6 +69,21 @@ public class MainWorld : MonoBehaviour
                 if (y == -5) _obstaclesTileMap.SetTile(currentTilePos, tileCloudObstacle);
 
                 if(x == startXPos + segmentWidth -1 && y != 0) _obstaclesTileMap.SetTile(currentTilePos, tileCloudObstacle);
+            }
+        }
+
+        int startPosBounds = startXPos + segmentWidth;
+
+        for(int y = 0; y > -6; y--)
+        {
+            for(int x = startPosBounds; x < startPosBounds + 10; x++)
+            {
+                TileBase tileToCreate = baseTileGround;
+                Vector3Int currentTilePos = new Vector3Int(x, y, 0);
+
+                if (y == 0) _obstaclesTileMap.SetTile(currentTilePos, seamTileGround); else _baseGroundTileMap.SetTile(currentTilePos, baseTileGround);
+
+
             }
         }
 
