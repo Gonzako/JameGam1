@@ -123,11 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &299991054 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3003966837332867123, guid: 9421841d605c5e349a61a981f859b2ff, type: 3}
-  m_PrefabInstance: {fileID: 632690494}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &299991055 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3003966837332867120, guid: 9421841d605c5e349a61a981f859b2ff, type: 3}
@@ -2294,7 +2289,6 @@ GameObject:
   - component: {fileID: 920386736}
   - component: {fileID: 920386735}
   - component: {fileID: 920386734}
-  - component: {fileID: 920386737}
   - component: {fileID: 920386738}
   m_Layer: 0
   m_Name: Main Camera
@@ -2369,19 +2363,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &920386737
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 920386733}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a21ee4af9fdea244e8a47edb1d684762, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetToFollow: {fileID: 299991054}
 --- !u!114 &920386738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2567,6 +2548,22 @@ PrefabInstance:
       propertyPath: m_Follow
       value: 
       objectReference: {fileID: 299991055}
+    - target: {fileID: 1351110928288972152, guid: 41f70fde14d68d94bbe66770daafca2e, type: 3}
+      propertyPath: m_StandbyUpdate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1351110928288972152, guid: 41f70fde14d68d94bbe66770daafca2e, type: 3}
+      propertyPath: m_Transitions.m_OnCameraLive.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1351110928288972152, guid: 41f70fde14d68d94bbe66770daafca2e, type: 3}
+      propertyPath: m_Transitions.m_OnCameraLive.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1351110928288972152, guid: 41f70fde14d68d94bbe66770daafca2e, type: 3}
+      propertyPath: m_Transitions.m_OnCameraLive.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1351110928288972153, guid: 41f70fde14d68d94bbe66770daafca2e, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -2615,7 +2612,37 @@ PrefabInstance:
       propertyPath: m_Name
       value: CM vcam1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 1351110929124658192, guid: 41f70fde14d68d94bbe66770daafca2e, type: 3}
+      propertyPath: m_XDamping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1351110929124658192, guid: 41f70fde14d68d94bbe66770daafca2e, type: 3}
+      propertyPath: m_YDamping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1351110929124658192, guid: 41f70fde14d68d94bbe66770daafca2e, type: 3}
+      propertyPath: m_ZDamping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1351110929124658192, guid: 41f70fde14d68d94bbe66770daafca2e, type: 3}
+      propertyPath: m_LookaheadTime
+      value: 0.042
+      objectReference: {fileID: 0}
+    - target: {fileID: 1351110929124658192, guid: 41f70fde14d68d94bbe66770daafca2e, type: 3}
+      propertyPath: m_LookaheadIgnoreY
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1351110929124658192, guid: 41f70fde14d68d94bbe66770daafca2e, type: 3}
+      propertyPath: m_UnlimitedSoftZone
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5609948877031731556, guid: 41f70fde14d68d94bbe66770daafca2e, type: 3}
+      propertyPath: m_NoiseProfile
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6645498867767634671, guid: 41f70fde14d68d94bbe66770daafca2e, type: 3}
+    - {fileID: 5609948877031731556, guid: 41f70fde14d68d94bbe66770daafca2e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 41f70fde14d68d94bbe66770daafca2e, type: 3}
 --- !u!1001 &2415132485867321498
 PrefabInstance:
