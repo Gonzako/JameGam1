@@ -85,7 +85,7 @@ public class PlayerMovement : MonoBehaviour
         // 8 = Look Right-Down
 
         var mousePosOnScreen = Input.mousePosition;
-        Debug.Log("Raw MousePos: " + mousePosOnScreen);
+        //Debug.Log("Raw MousePos: " + mousePosOnScreen);
 
         RotationSectorOnScreen mouseIsInSector = RotationSectorOnScreen.Center;
 
@@ -100,6 +100,15 @@ public class PlayerMovement : MonoBehaviour
 
         playerAnimationController.PlayLookAnimation(mouseIsInSector);
 
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.transform.CompareTag("LevelTrigger"))
+        {
+            this.transform.parent.GetComponent<BasicGameLogic>().BeginNextLevel();
+            Destroy(collision.gameObject);
+        }
     }
 
 
