@@ -22,6 +22,7 @@ public class Projectile : MonoBehaviour
         sr = GetComponentInChildren<SpriteRenderer>();
         sr.transform.up = direction.normalized;
         sr.color = color;
+        StartCoroutine(DespawnTimer(7f));
     }
 
 
@@ -35,5 +36,11 @@ public class Projectile : MonoBehaviour
             Destroy(this.gameObject);
         }
             
+    }
+
+    IEnumerator DespawnTimer(float lifetime)
+    {
+        yield return new WaitForSeconds(lifetime);
+        Destroy(this.transform.gameObject);
     }
 }

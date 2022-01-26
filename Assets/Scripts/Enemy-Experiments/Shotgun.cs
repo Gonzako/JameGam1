@@ -14,7 +14,7 @@ public class Shotgun : MonoBehaviour
 
     public float lastFired;
     public float cooldown = 2;
-    float[] shootingAngles = {0, 15, -15};
+
     [SerializeField]
     Transform targetShooter;
 
@@ -23,6 +23,7 @@ public class Shotgun : MonoBehaviour
         target = GameObject.FindGameObjectWithTag("Player");
         rb = GetComponentInChildren<Rigidbody2D>();
         lastFired = Time.time;
+        
     }
 
 
@@ -51,7 +52,7 @@ public class Shotgun : MonoBehaviour
        
         if (target != null)
         {
-            for (int i = 0; i < shootingAngles.Length; i++)
+            for (int i = 0; i < 3; i++)
             {
 
                 Projectile bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
@@ -62,18 +63,4 @@ public class Shotgun : MonoBehaviour
 
         lastFired = Time.time;
     }
-    /*
-    public Vector2 RotateVector(Vector2 vec, float angle)
-    {
-        // not working properly yet. Cant distinguish between above and below
-
-        // takes a Vector and rotates it by given angle and returns new vector
-         
-        angle +=  Vector2.Angle(Vector2.right, vec);
-        angle *= Mathf.Deg2Rad;
-
-        
-
-        return new Vector2(Mathf.Cos(angle),angle>180? Mathf.Sin(angle):-Mathf.Sin(angle));
-    }*/
 }
