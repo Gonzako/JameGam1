@@ -69,7 +69,7 @@ public class MainWorld : MonoBehaviour
 
                 if (y == -5) _obstaclesTileMap.SetTile(currentTilePos, tileCloudObstacle);
 
-
+                if(x == startXPos + segmentWidth -1 && y != 0) _obstaclesTileMap.SetTile(currentTilePos, tileCloudObstacle);
             }
         }
 
