@@ -260,6 +260,7 @@ GameObject:
   - component: {fileID: 3003966836654067577}
   - component: {fileID: 50930440590503762}
   - component: {fileID: 4214635559541770554}
+  - component: {fileID: 2507304683506305596}
   m_Layer: 7
   m_Name: PlayerLogic
   m_TagString: Player
@@ -392,6 +393,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootSpeed: 20
+--- !u!114 &2507304683506305596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3003966837332867123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff65866d25dc52442b2a3b90b26c78b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3003966837585460312
 GameObject:
   m_ObjectHideFlags: 0

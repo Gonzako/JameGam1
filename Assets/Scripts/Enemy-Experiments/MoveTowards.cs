@@ -14,10 +14,14 @@ public class MoveTowards : MonoBehaviour
 
     private void Start()
     {
+
         target = GameObject.FindGameObjectWithTag("Player");
 
         rb = GetComponent<Rigidbody2D>();
     }
+
+   
+
     void Update()
     {
         if(target != null)
@@ -28,10 +32,15 @@ public class MoveTowards : MonoBehaviour
         {
             rb.velocity = Vector2.zero;
         }
+
+        transform.parent.GetChild(1).transform.position = transform.position;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Destroy(collision.gameObject);
+        if(collision.gameObject.layer == 6)
+        {
+            Destroy(transform.parent.gameObject);
+        }
     }
 }

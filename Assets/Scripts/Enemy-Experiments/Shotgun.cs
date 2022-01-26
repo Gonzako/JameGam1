@@ -21,7 +21,7 @@ public class Shotgun : MonoBehaviour
     private void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player");
-        rb = GetComponentInChildren<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
         lastFired = Time.time;
         
     }
@@ -33,9 +33,7 @@ public class Shotgun : MonoBehaviour
         targetShooter.right = (target.transform.position - transform.position).normalized;
         if (target != null && distance > followDistance)
         {
-            //rb.velocity = (target.transform.position - transform.position).normalized * speed;
-
-            transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
+            rb.velocity = (target.transform.position - transform.position).normalized * speed;
         }
         else
         {
@@ -45,6 +43,8 @@ public class Shotgun : MonoBehaviour
                 ShootShotgun();
             }
         }
+
+        transform.parent.GetChild(1).transform.position = transform.position;
     }
 
     void ShootShotgun()
@@ -62,5 +62,12 @@ public class Shotgun : MonoBehaviour
         }
 
         lastFired = Time.time;
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == 6)
+        {
+            Destroy(transform.parent.gameObject);
+        }
     }
 }
