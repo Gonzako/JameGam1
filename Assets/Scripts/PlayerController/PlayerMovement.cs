@@ -107,6 +107,7 @@ public class PlayerMovement : MonoBehaviour
         if(collision.transform.CompareTag("LevelTrigger"))
         {
             this.transform.parent.GetComponent<BasicGameLogic>().BeginNextLevel();
+            Destroy(collision.gameObject);
         }
     }
 
