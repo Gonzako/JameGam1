@@ -9,9 +9,24 @@ public class MainWorld : MonoBehaviour
     [SerializeField] Tilemap _walkableObjectsTileMap;
     [SerializeField] Tilemap _obstaclesTileMap;
 
+    #region Basic Ground Tiles
     [SerializeField] TileBase baseTileGround;
+    [SerializeField] TileBase seamTileGround;
+    #endregion
+
+    #region Walkable Ground Tiles
+    [SerializeField] TileBase walkableLollipop;
+    #endregion
+
+    #region Obstacle Ground Tiles
+    [SerializeField] TileBase tileCloudObstacle;
+    #endregion
+
+
 
     [SerializeField] GameObject _playerReference;
+
+
 
     private void Awake()
     {
@@ -32,22 +47,48 @@ public class MainWorld : MonoBehaviour
         _obstaclesTileMap.DeleteCells(roomStartPosition, roomEndPosition);
 
         for(int y = -1; y > -7; y--)
+
         {
-            for(int x = -9; x < 25; x++)
             {
-                _baseGroundTileMap.SetTile(new Vector3Int(x, y, 0), baseTileGround);
+                TileBase tileToCreate = baseTileGround;
+                Vector3Int currentTilePos = new Vector3Int(x, y, 0);
+
+                if (y == 0) _obstaclesTileMap.SetTile(currentTilePos, seamTileGround); else _baseGroundTileMap.SetTile(currentTilePos, baseTileGround);
+
+                if (x == startXPos && y != 0 && y != -3) _obstaclesTileMap.SetTile(currentTilePos, tileCloudObstacle);
+
+                if (y == -5) _obstaclesTileMap.SetTile(currentTilePos, tileCloudObstacle);
+
+
             }
         }
 
+
+    }
+
+    void GenerateWorldStart()
+    {
+        for (int y = 0; y > -6; y--)
+        {
+            for (int x = -25; x < 10; x++)
+            {
+                TileBase tileToCreate = baseTileGround;
+                Vector3Int currentTilePos = new Vector3Int(x, y, 0);
+
+                if (y == 0) _obstaclesTileMap.SetTile(currentTilePos, seamTileGround); else _baseGroundTileMap.SetTile(currentTilePos, baseTileGround);
+
+                if (x == -9 && y != 0) _obstaclesTileMap.SetTile(currentTilePos, tileCloudObstacle);
+
+                if (y == -5) _obstaclesTileMap.SetTile(currentTilePos, tileCloudObstacle);
+
+
+            }
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        // get player position
-        // check for tilepos (convert to playerpos to tilemappos)
-
-        //var playerPos = playerPos;
 
     }
 }

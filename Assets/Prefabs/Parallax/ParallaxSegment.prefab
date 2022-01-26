@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1987864569032121147}
   - component: {fileID: 1770223377287078869}
-  - component: {fileID: 2292851450792235290}
+  - component: {fileID: 8847216666473338822}
+  - component: {fileID: 5982672495850417169}
   m_Layer: 0
-  m_Name: bg_trees_2
+  m_Name: Layer-3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 684940258367703295}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.48, z: -20}
+  m_LocalPosition: {x: -0.99517727, y: -2, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 2}
   m_Children: []
   m_Father: {fileID: 1800061778222063560}
@@ -76,14 +77,14 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 2.56, y: 1.54}
+  m_DrawMode: 2
+  m_Size: {x: 153.5, y: 1.54}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2292851450792235290
+--- !u!114 &8847216666473338822
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -92,13 +93,36 @@ MonoBehaviour:
   m_GameObject: {fileID: 684940258367703295}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 657188e795511ba47b863b7e7e4570f6, type: 3}
+  m_Script: {fileID: 11500000, guid: 23be92f999b380e42a54164f59940057, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Length: 0
-  StartPos: 0
-  objectToFollow: {fileID: 0}
-  effectStrength: 0.5
+  parallaxFactor: 0.22
+--- !u!61 &5982672495850417169
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 684940258367703295}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.19482422, y: -0.7373563}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.56, y: 1.54}
+    newSize: {x: 153.5, y: 1.54}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 2
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 155.23575, y: 0.5905497}
+  m_EdgeRadius: 0
 --- !u!1 &771100642447973264
 GameObject:
   m_ObjectHideFlags: 0
@@ -109,9 +133,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1767356899155063862}
   - component: {fileID: 8368985002780540363}
-  - component: {fileID: 7375020018868272841}
+  - component: {fileID: 3657048001307692443}
+  - component: {fileID: 7260137833647874329}
   m_Layer: 0
-  m_Name: bg_trees_1
+  m_Name: Layer-2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -125,7 +150,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 771100642447973264}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.47, z: -20}
+  m_LocalPosition: {x: -0.7961415, y: 0.47, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 2}
   m_Children: []
   m_Father: {fileID: 1800061778222063560}
@@ -175,14 +200,14 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 2.56, y: 1.54}
+  m_DrawMode: 2
+  m_Size: {x: 153.5, y: 1.54}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7375020018868272841
+--- !u!114 &3657048001307692443
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -191,13 +216,36 @@ MonoBehaviour:
   m_GameObject: {fileID: 771100642447973264}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 657188e795511ba47b863b7e7e4570f6, type: 3}
+  m_Script: {fileID: 11500000, guid: 23be92f999b380e42a54164f59940057, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Length: 0
-  StartPos: 0
-  objectToFollow: {fileID: 0}
-  effectStrength: 0.4
+  parallaxFactor: 0.2
+--- !u!61 &7260137833647874329
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 771100642447973264}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0045166016, y: -0.07081665}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.56, y: 1.54}
+    newSize: {x: 153.5, y: 1.54}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 2
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 155.2357, y: 0.7392254}
+  m_EdgeRadius: 0
 --- !u!1 &1682748577334457794
 GameObject:
   m_ObjectHideFlags: 0
@@ -208,9 +256,9 @@ GameObject:
   m_Component:
   - component: {fileID: 228378008892979632}
   - component: {fileID: 836384797905974622}
-  - component: {fileID: 1190916500113458454}
+  - component: {fileID: 7108186079688566638}
   m_Layer: 0
-  m_Name: bg_sky
+  m_Name: Layer-0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -224,7 +272,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1682748577334457794}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.93, z: -20}
+  m_LocalPosition: {x: -0.19903538, y: 1.93, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 2}
   m_Children: []
   m_Father: {fileID: 1800061778222063560}
@@ -274,14 +322,14 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 2.56, y: 1.54}
+  m_DrawMode: 2
+  m_Size: {x: 153.5, y: 4.62}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1190916500113458454
+--- !u!114 &7108186079688566638
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -290,13 +338,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1682748577334457794}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 657188e795511ba47b863b7e7e4570f6, type: 3}
+  m_Script: {fileID: 11500000, guid: 23be92f999b380e42a54164f59940057, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Length: 0
-  StartPos: 0
-  objectToFollow: {fileID: 0}
-  effectStrength: 1
+  parallaxFactor: 0
 --- !u!1 &5084253002753863977
 GameObject:
   m_ObjectHideFlags: 0
@@ -306,7 +351,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1800061778222063560}
-  - component: {fileID: 8434280602978518483}
+  - component: {fileID: 7666421864993750326}
   m_Layer: 0
   m_Name: ParallaxSegment
   m_TagString: Untagged
@@ -332,32 +377,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &8434280602978518483
-BoxCollider2D:
+--- !u!114 &7666421864993750326
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5084253002753863977}
   m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.008196592, y: -0.6256939}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 5.442575, y: 0.32396287}
-  m_EdgeRadius: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 657188e795511ba47b863b7e7e4570f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parallaxCamera: {fileID: 0}
 --- !u!1 &6308764834450695188
 GameObject:
   m_ObjectHideFlags: 0
@@ -368,9 +400,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3507027023657552341}
   - component: {fileID: 296980331888675546}
-  - component: {fileID: 1940536576997670569}
+  - component: {fileID: 1823765104722256926}
   m_Layer: 0
-  m_Name: bg_candycorn
+  m_Name: Layer-1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -384,7 +416,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6308764834450695188}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.69, z: -20}
+  m_LocalPosition: {x: -0.39807075, y: 0.69, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 2}
   m_Children: []
   m_Father: {fileID: 1800061778222063560}
@@ -434,14 +466,14 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 2.56, y: 1.54}
+  m_DrawMode: 2
+  m_Size: {x: 153.5, y: 1.54}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1940536576997670569
+--- !u!114 &1823765104722256926
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -450,10 +482,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6308764834450695188}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 657188e795511ba47b863b7e7e4570f6, type: 3}
+  m_Script: {fileID: 11500000, guid: 23be92f999b380e42a54164f59940057, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Length: 0
-  StartPos: 0
-  objectToFollow: {fileID: 0}
-  effectStrength: 0.1
+  parallaxFactor: 0.1

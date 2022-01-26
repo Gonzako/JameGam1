@@ -2,41 +2,40 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[ExecuteInEditMode]
 public class ParallaxBackground : MonoBehaviour
 {
-    public float Length;
-    public float StartPos;
-    public GameObject objectToFollow;
-    public float effectStrength;
+    public ParallaxCamera parallaxCamera;
+    List<ParallaxLayer> parallaxLayers = new List<ParallaxLayer>();
 
-    // Start is called before the first frame update
     void Start()
     {
-
-        objectToFollow = GameObject.FindGameObjectWithTag("Player");
-
-
-        StartPos = this.transform.position.x;
-        Length = this.GetComponent<SpriteRenderer>().bounds.size.x;
+        if (parallaxCamera == null)
+            parallaxCamera = Camera.main.GetComponent<ParallaxCamera>();
+        if (parallaxCamera != null)
+            parallaxCamera.onCameraTranslate += Move;
+        SetLayers();
     }
 
-    // Update is called once per frame
-    void Update()
+    void SetLayers()
     {
-        float distanceMoved = objectToFollow.transform.position.x * (1 - effectStrength);
-
-        float distance = objectToFollow.transform.position.x * effectStrength;
-
-        transform.position = new Vector3(StartPos + distance, this.transform.position.y, this.transform.position.z);
-
-        if (distanceMoved > StartPos + Length + distance)
+        parallaxLayers.Clear();
+        for (int i = 0; i < transform.childCount; i++)
         {
-            StartPos += Length;
-        }
-        else if (distanceMoved < StartPos - Length - distance)
-        {
-            StartPos -= Length;
-        }
+            ParallaxLayer layer = transform.GetChild(i).GetComponent<ParallaxLayer>();
 
+            if (layer != null)
+            {
+                layer.name = "Layer-" + i;
+                parallaxLayers.Add(layer);
+            }
+        }
+    }
+    void Move(float delta)
+    {
+        foreach (ParallaxLayer layer in parallaxLayers)
+        {
+            layer.Move(delta);
+        }
     }
 }
