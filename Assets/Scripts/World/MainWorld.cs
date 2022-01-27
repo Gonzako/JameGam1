@@ -1,10 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
 
 public class MainWorld : MonoBehaviour
 {
+    [SerializeField] int LevelIndex = 0;
+
+    [SerializeField] GameObject WorldTileMap;
+
     [SerializeField] Tilemap _baseGroundTileMap;
     [SerializeField] Tilemap _walkableObjectsTileMap;
     [SerializeField] Tilemap _obstaclesTileMap;
@@ -22,17 +27,41 @@ public class MainWorld : MonoBehaviour
     [SerializeField] TileBase tileCloudObstacle;
     #endregion
 
+    [SerializeField] GameObject[] enemyPrefabs;
 
 
     [SerializeField] GameObject _playerReference;
 
     [SerializeField] GameObject prefabLevelTrigger;
 
+    [SerializeField] GameObject leftBorderWall;
+
+    public int currentSegmentXPos = 0;
+
     public int nextSegmentXPos = 0;
+
+    public bool levelEntered = false;
 
     private void Awake()
     {
         _playerReference = GameObject.FindGameObjectWithTag("Player");
+
+
+
+    }
+
+    void DeleteAllTiles()
+    {
+
+        _baseGroundTileMap.ClearAllTiles();
+        _walkableObjectsTileMap.ClearAllTiles();
+        _obstaclesTileMap.ClearAllTiles();
+
+    }
+
+    private void OnDisable()
+    {
+        BasicGameLogic.OnLevelEnter -= null;
     }
 
     // Start is called before the first frame update
@@ -40,7 +69,26 @@ public class MainWorld : MonoBehaviour
     {
         BasicGameLogic.OnLevelEnter += delegate
         {
-            GenerateNextSegment(nextSegmentXPos);
+            if(LevelIndex > 3)
+            {
+                LevelIndex = 0;
+                DeleteAllTiles();
+                _playerReference.GetComponentInChildren<PlayerMovement>().gameObject.transform.position = new Vector3(0, -2, 0);
+                GenerateWorldStart();
+                GenerateNextSegment(10);
+                leftBorderWall.transform.position = new Vector3(-25f, -1.75f, 0);
+            }
+            else
+            {
+                _obstaclesTileMap.SetTile(new Vector3Int(nextSegmentXPos, -3, 0), null);
+                GenerateNextSegment(nextSegmentXPos);
+            }
+
+            if(LevelIndex == 4)
+            {
+                _obstaclesTileMap.SetTile(new Vector3Int(nextSegmentXPos, -3, 0), null);
+            }
+            
         };
 
         // generate simple room
@@ -59,7 +107,10 @@ public class MainWorld : MonoBehaviour
 
     void GenerateNextSegment(int startXPos)
     {
+        currentSegmentXPos = startXPos;
+        levelEntered = false;
         int segmentWidth = Random.Range(15, 30);
+
 
         nextSegmentXPos = startXPos + segmentWidth - 1;
         Debug.Log(nextSegmentXPos);
@@ -95,9 +146,6 @@ public class MainWorld : MonoBehaviour
                 if(x == startXPos + segmentWidth -1 && y != 0) _obstaclesTileMap.SetTile(currentTilePos, tileCloudObstacle);
             
             }
-
-            
-
         }
 
         int startPosBounds = startXPos + segmentWidth;
@@ -113,9 +161,10 @@ public class MainWorld : MonoBehaviour
             }
         }
         
-        _obstaclesTileMap.SetTile(new Vector3Int(nextSegmentXPos, -3, 0), null);
+        
 
-        var levelTrigger = Instantiate(prefabLevelTrigger, new Vector3(startXPos + segmentWidth-1.25f, -1.85f, 0), Quaternion.identity);
+        var levelTrigger = Instantiate(prefabLevelTrigger, new Vector3(startXPos + segmentWidth-2, -1.85f, 0), Quaternion.identity);
+        LevelIndex++;
     }
 
     void GenerateWorldStart()
@@ -141,6 +190,22 @@ public class MainWorld : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        leftBorderWall.transform.position = new Vector3(leftBorderWall.transform.position.x+1.1f*Time.deltaTime, leftBorderWall.transform.position.y, leftBorderWall.transform.position.z);
+        
+        if(levelEntered == false)
+        {
+            if (_playerReference.GetComponentInChildren<PlayerMovement>().gameObject.transform.position.x >= currentSegmentXPos + 1)
+            {
+                _obstaclesTileMap.SetTile(new Vector3Int(currentSegmentXPos, -3, 0), tileCloudObstacle);
+                levelEntered = true;
+                int enemyCount = Random.Range(1, 5);
+                for (int i = 0; i < enemyCount; i++)
+                {
+                    var enemy = Instantiate(enemyPrefabs[Random.Range(0, enemyPrefabs.Length)], new Vector3(Random.Range(currentSegmentXPos, nextSegmentXPos), Random.Range(-0.82f, -3.5f), 0), Quaternion.identity);
+                }
+            }
+        }
 
+        
     }
 }
