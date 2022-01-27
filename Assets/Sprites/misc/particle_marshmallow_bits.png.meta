@@ -1,31 +1,31 @@
 fileFormatVersion: 2
-guid: 429b6487ce463fb4eb7396b43710b6f3
+guid: f72b10d78339d1c4aa935ebc6564c9c0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3673083907406231988
-    second: projectile_hard_candy_0
+      213: -3173360728434293125
+    second: particle_marshmallow_bits_0
   - first:
-      213: -1857318832020009733
-    second: projectile_hard_candy_1
+      213: -4035115690291344132
+    second: particle_marshmallow_bits_1
   - first:
-      213: 9040939122582222518
-    second: projectile_hard_candy_2
+      213: -256067154337230399
+    second: particle_marshmallow_bits_2
   - first:
-      213: 6527350920937156296
-    second: projectile_hard_candy_3
+      213: -6665312466872244102
+    second: particle_marshmallow_bits_3
   - first:
-      213: 7872644965013552351
-    second: projectile_hard_candy_4
+      213: -7682605680031117093
+    second: particle_marshmallow_bits_4
   - first:
-      213: -8206356694765580207
-    second: projectile_hard_candy_5
+      213: 3436239318040485369
+    second: particle_marshmallow_bits_5
   - first:
-      213: 3855960119131410249
-    second: projectile_hard_candy_6
+      213: -4446457001538369473
+    second: particle_marshmallow_bits_6
   - first:
-      213: -5099332891050710662
-    second: projectile_hard_candy_7
+      213: 2403273397336162568
+    second: particle_marshmallow_bits_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -115,13 +115,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: projectile_hard_candy_0
+      name: particle_marshmallow_bits_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 12
-        height: 12
+        width: 6
+        height: 6
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -129,20 +129,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4b9f62b5a5a69f230800000000000000
-      internalID: 3673083907406231988
+      spriteID: b76cf7d0b35f5f3d0800000000000000
+      internalID: -3173360728434293125
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: projectile_hard_candy_1
+      name: particle_marshmallow_bits_1
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 0
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfc449c98a36008c0800000000000000
+      internalID: -4035115690291344132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particle_marshmallow_bits_2
       rect:
         serializedVersion: 2
         x: 12
         y: 0
-        width: 12
-        height: 12
+        width: 6
+        height: 6
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,20 +171,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bfccdcedc5a7936e0800000000000000
-      internalID: -1857318832020009733
+      spriteID: 1c19513a744427cf0800000000000000
+      internalID: -256067154337230399
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: projectile_hard_candy_2
+      name: particle_marshmallow_bits_3
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 0
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a78e81f20ad0083a0800000000000000
+      internalID: -6665312466872244102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particle_marshmallow_bits_4
       rect:
         serializedVersion: 2
         x: 24
         y: 0
-        width: 12
-        height: 12
+        width: 6
+        height: 6
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,20 +213,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6b6f1752b3ed77d70800000000000000
-      internalID: 9040939122582222518
+      spriteID: bd0d85496d6e16590800000000000000
+      internalID: -7682605680031117093
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: projectile_hard_candy_3
+      name: particle_marshmallow_bits_5
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 0
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fd980b2479ffaf20800000000000000
+      internalID: 3436239318040485369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particle_marshmallow_bits_6
       rect:
         serializedVersion: 2
         x: 36
         y: 0
-        width: 12
-        height: 12
+        width: 6
+        height: 6
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,20 +255,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8ce27c6441fc59a50800000000000000
-      internalID: 6527350920937156296
+      spriteID: f38c14a5ae20b42c0800000000000000
+      internalID: -4446457001538369473
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: projectile_hard_candy_4
+      name: particle_marshmallow_bits_7
       rect:
         serializedVersion: 2
-        x: 48
+        x: 42
         y: 0
-        width: 12
-        height: 12
+        width: 6
+        height: 6
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -213,71 +276,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fdc766672e0414d60800000000000000
-      internalID: 7872644965013552351
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: projectile_hard_candy_5
-      rect:
-        serializedVersion: 2
-        x: 60
-        y: 0
-        width: 12
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1505954b01a2d1e80800000000000000
-      internalID: -8206356694765580207
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: projectile_hard_candy_6
-      rect:
-        serializedVersion: 2
-        x: 72
-        y: 0
-        width: 12
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 94f86e07c4f138530800000000000000
-      internalID: 3855960119131410249
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: projectile_hard_candy_7
-      rect:
-        serializedVersion: 2
-        x: 84
-        y: 0
-        width: 12
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a79e475c0c78b39b0800000000000000
-      internalID: -5099332891050710662
+      spriteID: 8014e5afb642a5120800000000000000
+      internalID: 2403273397336162568
       vertices: []
       indices: 
       edges: []

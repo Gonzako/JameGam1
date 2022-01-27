@@ -50,6 +50,12 @@ public class PlayerMovement : MonoBehaviour
         }
 
 
+        if(this.transform.position.y >= 0.52f || this.transform.position.y <= -5.18f)
+        {
+            this.transform.position = new Vector3(this.transform.position.x, -1.8f, 0);
+                
+        }
+
         var horizontalInput = (Input.GetAxis("Horizontal"));
         var verticalInput = (Input.GetAxis("Vertical"));
 
