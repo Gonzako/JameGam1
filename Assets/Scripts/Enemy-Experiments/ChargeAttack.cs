@@ -6,22 +6,23 @@ using UnityEngine;
 public class ChargeAttack : MonoBehaviour
 {
     public GameObject target;
-    public float speed = 0.01f;
+    public float speed = 12f;
     public Rigidbody2D rb;
     public Color bulletColor;
     float lastCharge;
-    public float cooldown = 3;
-    bool charging = false;
+    public float cooldown = 0;
+    public bool charging = false;
     Vector2 tar;
     SpriteRenderer sr;
-    public float maxVelocity = 2f;
+    public float maxVelocity = 24f;
 
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player");
         lastCharge = Time.time;
-        rb = GetComponentInChildren<Rigidbody2D>();
-        sr = GetComponentInChildren<SpriteRenderer>();
+        rb = this.transform.GetChild(0).GetComponent<Rigidbody2D>();
+        sr = this.transform.GetChild(1).GetChild(0).GetComponent<SpriteRenderer>();
+
     }
 
     // Update is called once per frame
@@ -30,30 +31,47 @@ public class ChargeAttack : MonoBehaviour
         if (lastCharge + cooldown < Time.time && charging == false)
         {
             rb.velocity = Vector2.zero;
-            tar = ((target.transform.position - transform.position));
+            tar = ((target.transform.position - transform.position)).normalized;
             charging = true;
             ChargeUp();
         }
         transform.position = rb.transform.position;
 
+        if (rb.velocity.x > maxVelocity)
+        {
+            rb.velocity = new Vector2(maxVelocity, rb.velocity.y);
+        }
+
+        if(rb.velocity.y > maxVelocity)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, maxVelocity);
+        }
+
     }
 
     private async void ChargeUp()
     {
-        rb.velocity = Vector2.zero;
+        //Debug.Log("charging...");
+        rb.velocity = Vector3.zero;
         sr.transform.localScale = new Vector3(1.2f, 1.2f, 1.2f);
-        await Task.Delay(1000);
+        await Task.Delay(100);
         sr.transform.localScale = new Vector3(1, 1, 1);
 
-        rb.velocity = tar.normalized * speed;
+        Debug.Log(rb.velocity);
+        //Debug.Log("Charge!");
+        Debug.Log("" + tar + " / " + speed + " = " + tar*speed);
+        rb.velocity = tar * speed * Time.deltaTime;
+        Debug.Log(rb.velocity);
 
-        await Task.Delay(3000);
+        await Task.Delay(300);
         charging = false;
         lastCharge = Time.time;
-        rb.velocity = Vector2.zero;
+        rb.velocity = Vector3.zero;
 
-
-
+        //Debug.Log("Charge Done!");
     }
+
+    
+
 }
 

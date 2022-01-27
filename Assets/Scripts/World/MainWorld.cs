@@ -42,12 +42,17 @@ public class MainWorld : MonoBehaviour
 
     public bool levelEntered = false;
 
+    public int CurrentEnemeyCount = 0;
+
+
     private void Awake()
     {
         _playerReference = GameObject.FindGameObjectWithTag("Player");
+    }
 
-
-
+    public void EnemyKilled()
+    {
+        CurrentEnemeyCount -= 1;
     }
 
     void DeleteAllTiles()
@@ -163,7 +168,7 @@ public class MainWorld : MonoBehaviour
         
         
 
-        var levelTrigger = Instantiate(prefabLevelTrigger, new Vector3(startXPos + segmentWidth-2, -1.85f, 0), Quaternion.identity);
+        //var levelTrigger = Instantiate(prefabLevelTrigger, new Vector3(startXPos + segmentWidth-2, -1.85f, 0), Quaternion.identity);
         LevelIndex++;
     }
 
@@ -190,6 +195,16 @@ public class MainWorld : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(levelEntered == true)
+        {
+            if (CurrentEnemeyCount <= 0)
+            {
+                _playerReference.transform.parent.GetComponent<BasicGameLogic>().BeginNextLevel();
+            }
+        }
+
+        
+
         leftBorderWall.transform.position = new Vector3(leftBorderWall.transform.position.x+1.1f*Time.deltaTime, leftBorderWall.transform.position.y, leftBorderWall.transform.position.z);
         
         if(levelEntered == false)
@@ -202,6 +217,7 @@ public class MainWorld : MonoBehaviour
                 for (int i = 0; i < enemyCount; i++)
                 {
                     var enemy = Instantiate(enemyPrefabs[Random.Range(0, enemyPrefabs.Length)], new Vector3(Random.Range(currentSegmentXPos, nextSegmentXPos), Random.Range(-0.82f, -3.5f), 0), Quaternion.identity);
+                    CurrentEnemeyCount += 1;
                 }
             }
         }

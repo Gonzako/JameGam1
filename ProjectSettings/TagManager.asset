@@ -8,6 +8,7 @@ TagManager:
   - PlayerMaster
   - Enemy
   - LevelTrigger
+  - World
   layers:
   - Default
   - TransparentFX

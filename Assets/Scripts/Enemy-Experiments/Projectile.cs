@@ -36,6 +36,7 @@ public class Projectile : MonoBehaviour
         else //if (collision.transform.gameObject.layer == 0 ) // destroy if it hits environment
         {
             // todo: implement enemy system (example: collision.gameObject.GetComponent<Enemy>().HitEnemy(damageValue);  )
+            
             Destroy(this.gameObject);
         }
             

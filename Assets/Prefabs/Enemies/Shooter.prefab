@@ -93,6 +93,7 @@ GameObject:
   - component: {fileID: 1209313176117252494}
   - component: {fileID: 1968173491818423712}
   - component: {fileID: 1549613656195962812}
+  - component: {fileID: 8516619265215386512}
   m_Layer: 9
   m_Name: Logic
   m_TagString: Enemy
@@ -112,7 +113,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3915421006840095004}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!70 &1968173491818423712
 CapsuleCollider2D:
@@ -151,6 +152,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &8516619265215386512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2509248006393675553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7b1b05359083b14d977cb667df7f923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3915421006840094994
 GameObject:
   m_ObjectHideFlags: 0
@@ -179,8 +192,8 @@ Transform:
   m_LocalPosition: {x: -2.17, y: -1.17, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 6287110577791744722}
   - {fileID: 1209313176117252494}
+  - {fileID: 6287110577791744722}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -231,7 +244,7 @@ Transform:
   - {fileID: 449400398583929719}
   - {fileID: 4491226921621230046}
   m_Father: {fileID: 3915421006840095004}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9096856125503300321
 GameObject:

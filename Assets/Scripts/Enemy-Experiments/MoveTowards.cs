@@ -35,12 +35,4 @@ public class MoveTowards : MonoBehaviour
 
         transform.parent.GetChild(1).transform.position = transform.position;
     }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if(collision.gameObject.layer == 6)
-        {
-            Destroy(transform.parent.gameObject);
-        }
-    }
 }

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum PlayerState
 {
@@ -104,10 +105,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.transform.CompareTag("LevelTrigger"))
+        if(collision.transform.CompareTag("LeftBorderWall"))
         {
-            this.transform.parent.GetComponent<BasicGameLogic>().BeginNextLevel();
-            Destroy(collision.gameObject);
+            SceneManager.LoadScene(0);
         }
     }
 
