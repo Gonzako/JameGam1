@@ -216,7 +216,7 @@ public class MainWorld : MonoBehaviour
                 int enemyCount = Random.Range(1, 5);
                 for (int i = 0; i < enemyCount; i++)
                 {
-                    var enemy = Instantiate(enemyPrefabs[Random.Range(0, enemyPrefabs.Length)], new Vector3(Random.Range(currentSegmentXPos, nextSegmentXPos), Random.Range(-0.82f, -3.5f), 0), Quaternion.identity);
+                    var enemy = Instantiate(enemyPrefabs[Random.Range(0, enemyPrefabs.Length)], new Vector3(Random.Range(currentSegmentXPos+2, nextSegmentXPos-2), Random.Range(-0.82f, -3.5f), 0), Quaternion.identity);
                     CurrentEnemeyCount += 1;
                 }
             }

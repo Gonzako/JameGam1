@@ -22,6 +22,8 @@ public class EnemyDeathBehaviour : MonoBehaviour
         {
             GameObject.FindGameObjectWithTag("World").GetComponent<MainWorld>().EnemyKilled();
 
+            this.GetComponent<AudioSource>().Play();
+
             Destroy(this.transform.parent.gameObject);
         }
 

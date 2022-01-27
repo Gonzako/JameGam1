@@ -22,7 +22,7 @@ public class FourWayShooter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (lastFired + cooldown < Time.time) // see if cooldown time has passed
+        if (lastFired + cooldown  < Time.time) // see if cooldown time has passed
         {
             ShootAround();
         }
@@ -36,8 +36,9 @@ public class FourWayShooter : MonoBehaviour
             GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
             bullet.GetComponent<Projectile>().direction = shootingDirections[i];
 
-            bullet.GetComponent<Projectile>().color = this.GetComponent<SpriteRenderer>().color;
-            
+            bullet.GetComponent<Projectile>().color = bulletColor;
+
+
         }
         
         lastFired = Time.time;

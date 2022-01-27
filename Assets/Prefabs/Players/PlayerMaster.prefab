@@ -256,6 +256,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3003966837332867120}
   - component: {fileID: 3003966836654067576}
+  - component: {fileID: 7522148684617265074}
   - component: {fileID: 2575124713622730670}
   - component: {fileID: 3003966836654067577}
   - component: {fileID: 50930440590503762}
@@ -305,6 +306,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &7522148684617265074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3003966837332867123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3f738dfff0601041b59c5081e498252, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 4
+  speed: 500
+  defense: 0
+  attack: 1
 --- !u!114 &2575124713622730670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -350,7 +367,6 @@ MonoBehaviour:
     m_PreInfinity: 0
     m_PostInfinity: 2
     m_RotationOrder: 4
-  speed: 5
   isStandingStill: 1
   playerAnimationController: {fileID: 50930440590503762}
 --- !u!114 &3003966836654067577
@@ -392,7 +408,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 451ef52d4a9cecc4bb6126f2836b5a1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootSpeed: 20
+  shootSpeed: 50
 --- !u!114 &2507304683506305596
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ParallaxTesting.unity
     guid: 58ae8509c1503d64d854786837835c0c
+  - enabled: 1
+    path: Assets/Scenes/DeathScene.unity
+    guid: ad1812f00987e4947899b33f128010ec
   m_configObjects: {}

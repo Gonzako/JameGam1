@@ -15,6 +15,7 @@ public class PlayerHitDetection : MonoBehaviour
     private void PlayerDamaged()
     {
         Debug.Log("player takes damage");
+        PlayerStats.PlayerStatsInstance.Health -= 1;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

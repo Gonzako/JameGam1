@@ -12,6 +12,6 @@ public class MenuFunctions : MonoBehaviour
 
     public void StarGame()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 }
