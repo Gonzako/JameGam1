@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
+using UnityEngine.UI;
 
 public class MainWorld : MonoBehaviour
 {
@@ -29,6 +30,7 @@ public class MainWorld : MonoBehaviour
 
     [SerializeField] GameObject[] enemyPrefabs;
 
+    [SerializeField] TileBase[] eyeCandy;
 
     [SerializeField] GameObject _playerReference;
 
@@ -44,6 +46,9 @@ public class MainWorld : MonoBehaviour
 
     public int CurrentEnemeyCount = 0;
 
+    public int LayerIndex = 0;
+
+    public Text layerInfo;
 
     private void Awake()
     {
@@ -74,6 +79,7 @@ public class MainWorld : MonoBehaviour
     {
         BasicGameLogic.OnLevelEnter += delegate
         {
+
             if(LevelIndex > 3)
             {
                 LevelIndex = 0;
@@ -82,6 +88,7 @@ public class MainWorld : MonoBehaviour
                 GenerateWorldStart();
                 GenerateNextSegment(10);
                 leftBorderWall.transform.position = new Vector3(-25f, -1.75f, 0);
+                LayerIndex++;
             }
             else
             {
@@ -139,6 +146,14 @@ public class MainWorld : MonoBehaviour
                         if (random >= 85)
                         {
                             _obstaclesTileMap.SetTile(currentTilePos, tileCloudObstacle);
+                        }
+                        else
+                        {
+                            random = Random.Range(0, 100);
+                            if(random >= 90)
+                            {
+                                _walkableObjectsTileMap.SetTile(currentTilePos, eyeCandy[Random.Range(0, eyeCandy.Length)]);
+                            }
                         }
                     }
                     
@@ -203,7 +218,7 @@ public class MainWorld : MonoBehaviour
             }
         }
 
-        
+        layerInfo.text = "Level: " + LevelIndex + " / Layer: " + LayerIndex;
 
         leftBorderWall.transform.position = new Vector3(leftBorderWall.transform.position.x+1.1f*Time.deltaTime, leftBorderWall.transform.position.y, leftBorderWall.transform.position.z);
         
@@ -216,7 +231,7 @@ public class MainWorld : MonoBehaviour
                 int enemyCount = Random.Range(1, 5);
                 for (int i = 0; i < enemyCount; i++)
                 {
-                    var enemy = Instantiate(enemyPrefabs[Random.Range(0, enemyPrefabs.Length)], new Vector3(Random.Range(currentSegmentXPos+2, nextSegmentXPos-2), Random.Range(-0.82f, -3.5f), 0), Quaternion.identity);
+                    var enemy = Instantiate(enemyPrefabs[Random.Range(0, enemyPrefabs.Length)], new Vector3(Random.Range(currentSegmentXPos+2, nextSegmentXPos-2), Random.Range(-1, -2.5f), 0), Quaternion.identity);
                     CurrentEnemeyCount += 1;
                 }
             }

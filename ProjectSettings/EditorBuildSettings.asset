@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 1690cc6594e4ad846a57220b195bc6a5
   - enabled: 1
-    path: Assets/Scenes/ParallaxTesting.unity
+    path: Assets/Scenes/Game.unity
     guid: 58ae8509c1503d64d854786837835c0c
   - enabled: 1
     path: Assets/Scenes/DeathScene.unity

@@ -44,6 +44,11 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         
+        if(Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene(1);
+        }
+
 
         var horizontalInput = (Input.GetAxis("Horizontal"));
         var verticalInput = (Input.GetAxis("Vertical"));

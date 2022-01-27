@@ -35,7 +35,7 @@ public class Shooter : MonoBehaviour
             GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
             bullet.GetComponent<Projectile>().direction = target.transform.position - transform.position;
 
-            bullet.GetComponent<Projectile>().color = this.GetComponent<SpriteRenderer>().color;
+            bullet.GetComponent<Projectile>().color = bulletColor;
         }
 
         lastFired = Time.time;

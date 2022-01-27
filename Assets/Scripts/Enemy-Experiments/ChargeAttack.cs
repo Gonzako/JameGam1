@@ -71,7 +71,13 @@ public class ChargeAttack : MonoBehaviour
         //Debug.Log("Charge Done!");
     }
 
-    
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        GameObject.FindGameObjectWithTag("World").GetComponent<MainWorld>().EnemyKilled();
+        Destroy(this.gameObject);
+    }
+
 
 }
 

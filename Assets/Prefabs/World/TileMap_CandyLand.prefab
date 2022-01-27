@@ -75,12 +75,17 @@ MonoBehaviour:
   - {fileID: 6449184637272630499, guid: ea8d01291ab18f7428d1c946137aed8c, type: 3}
   - {fileID: 3915421006840094994, guid: 4750d2ff32bd85c438c2e79c3cc5b9cc, type: 3}
   - {fileID: 3951407887836930466, guid: 16d6d92db122b9040a0e34874ee25c92, type: 3}
+  eyeCandy:
+  - {fileID: 11400000, guid: fa221f34f60a6f34ab4cc9da5b215784, type: 2}
+  - {fileID: 11400000, guid: 9362a2ee018f2d14b906ce5694bf86ab, type: 2}
+  - {fileID: 11400000, guid: f88fa2cc45303434d93a290f1e81c451, type: 2}
   _playerReference: {fileID: 0}
   prefabLevelTrigger: {fileID: 7289972501469792929, guid: 74d5b7b301ab91746b07e724cd483ada, type: 3}
   leftBorderWall: {fileID: 0}
   currentSegmentXPos: 0
   nextSegmentXPos: 0
   levelEntered: 0
+  CurrentEnemeyCount: 0
 --- !u!1 &4715675614417084607
 GameObject:
   m_ObjectHideFlags: 0
