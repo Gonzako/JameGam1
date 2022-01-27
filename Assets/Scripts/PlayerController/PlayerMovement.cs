@@ -50,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
 
 
 
-        rb.velocity =( new Vector2(MovCurve.Evaluate(horizontalInput)*Mathf.Sign(horizontalInput), MovCurve.Evaluate(verticalInput)*Mathf.Sign(verticalInput)) * 500 * Time.deltaTime);
+        rb.velocity =( new Vector2(MovCurve.Evaluate(horizontalInput)*Mathf.Sign(horizontalInput), MovCurve.Evaluate(verticalInput)*Mathf.Sign(verticalInput)) * pStats.speed);
 
         PlayerState moveState = playerAnimationController.GetMoveState(horizontalInput, verticalInput);
 

@@ -17,17 +17,9 @@ public class PlayerStats : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ResetStats();
         instance = this;
     }
 
-    void ResetStats()
-    {
-        Health = 4;
-        speed = 5f;
-        defense = 0;
-        attack = 1;
-    }
 
     // Update is called once per frame
     void Update()

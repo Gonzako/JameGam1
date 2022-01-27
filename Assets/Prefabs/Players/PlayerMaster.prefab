@@ -319,7 +319,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: 4
-  speed: 500
+  speed: 5
   defense: 0
   attack: 1
 --- !u!114 &2575124713622730670
