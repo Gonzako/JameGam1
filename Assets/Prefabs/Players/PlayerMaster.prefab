@@ -322,6 +322,7 @@ MonoBehaviour:
   speed: 5
   defense: 0
   attack: 1
+  playerText: {fileID: 0}
 --- !u!114 &2575124713622730670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -431,6 +432,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3003966837585460313}
   - component: {fileID: 6622311719141328591}
+  - component: {fileID: 1203991227}
   m_Layer: 7
   m_Name: PlayerMaster
   m_TagString: PlayerMaster
@@ -466,6 +468,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fcc0330695719041ac8af314480a822, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1203991227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3003966837585460312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f200b8b34c92b24c9d4c27872597340, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerLogic: {fileID: 3003966837332867120}
 --- !u!1 &4422188723159676892
 GameObject:
   m_ObjectHideFlags: 0

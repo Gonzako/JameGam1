@@ -8,6 +8,7 @@ public class BaggieBoyBehaviour : MonoBehaviour
     public FallingProjectile targetBullet;
     public float Precision = 0.5f;
     private Animator Anim;
+    private bool shot = false;
 
     private void OnDisable()
     {
@@ -35,13 +36,16 @@ public class BaggieBoyBehaviour : MonoBehaviour
             var bullet = Instantiate(targetBullet, transform.position, Quaternion.identity);
             bullet.targetPosition = (Vector2)targetedPosition + Random.insideUnitCircle/Precision;
         }
+        shot = true;
     }
 
     IEnumerator playAnimation()
     {
         //animator call first
         Anim.Play("BaggieBoyShoot");
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitUntil(() => shot);
+        shot = false;
+        Anim.Play("BaggieBoyIdle");
     }
 
     IEnumerator shootRoutine()
