@@ -553,11 +553,11 @@ GameObject:
   - component: {fileID: 804013268}
   m_Layer: 5
   m_Name: BossFight
-  m_TagString: Untagged
+  m_TagString: BOSS_FIGHT_UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &804013268
 RectTransform:
   m_ObjectHideFlags: 0
@@ -657,6 +657,7 @@ GameObject:
   - component: {fileID: 1303800410}
   - component: {fileID: 1303800412}
   - component: {fileID: 1303800411}
+  - component: {fileID: 1303800413}
   m_Layer: 5
   m_Name: PlayerInfo
   m_TagString: Untagged
@@ -716,7 +717,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'HP: 0'
+  m_Text: 
 --- !u!222 &1303800412
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -725,6 +726,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1303800409}
   m_CullTransparentMesh: 1
+--- !u!114 &1303800413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1303800409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2984070c2c0bc1488a7eb409cda2bc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerStats: {fileID: 1859624835}
+  UI_HEART: {fileID: 6017660190283550819, guid: 5a8140fd5dad28b489db1cfdc013dea9, type: 3}
 --- !u!1 &1370062258
 GameObject:
   m_ObjectHideFlags: 0
@@ -864,6 +879,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7522148684617265074, guid: 9421841d605c5e349a61a981f859b2ff, type: 3}
+      propertyPath: playerInfo
+      value: 
+      objectReference: {fileID: 1303800409}
     - target: {fileID: 7522148684617265074, guid: 9421841d605c5e349a61a981f859b2ff, type: 3}
       propertyPath: playerText
       value: 
@@ -2637,7 +2656,7 @@ GameObject:
   - component: {fileID: 1643626045}
   m_Layer: 5
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: CANVAS
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2786,6 +2805,17 @@ PrefabInstance:
       objectReference: {fileID: 646641370}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25824d2d74d363e4ba917168db234090, type: 3}
+--- !u!114 &1859624835 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7522148684617265074, guid: 9421841d605c5e349a61a981f859b2ff, type: 3}
+  m_PrefabInstance: {fileID: 1432837173}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3f738dfff0601041b59c5081e498252, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1980864569
 GameObject:
   m_ObjectHideFlags: 0

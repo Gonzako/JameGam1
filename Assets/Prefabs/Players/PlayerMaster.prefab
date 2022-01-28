@@ -362,10 +362,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: 4
-  speed: 5
-  defense: 0
-  attack: 1
-  playerText: {fileID: 0}
+  Speed: 5
+  Attack: 1
+  FireRate: 0
+  playerInfo: {fileID: 0}
 --- !u!114 &2575124713622730670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -427,6 +427,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShootSpot: {fileID: 1653377024}
   targetBullet: {fileID: 2985503303860696789, guid: 3ba7a19fd172f5c43b64ffbde3bcdcce, type: 3}
+  pStats: {fileID: 7522148684617265074}
 --- !u!114 &50930440590503762
 MonoBehaviour:
   m_ObjectHideFlags: 0

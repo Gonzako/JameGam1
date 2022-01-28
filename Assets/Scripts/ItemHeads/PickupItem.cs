@@ -12,6 +12,7 @@ public class PickupItem : MonoBehaviour
         if(collision.transform.CompareTag("Player"))
         {
             PlayerReferencer.PlayerInstance.PlayerHeadStack.gameObject.GetComponent<HeadStacker>().AddHead(visualHead);
+            PlayerReferencer.PlayerInstance.PlayerLogic.gameObject.GetComponent<PlayerStats>().Powerup();
             Destroy(this.gameObject);
         }
         

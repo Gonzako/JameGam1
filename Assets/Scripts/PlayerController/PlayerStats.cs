@@ -15,7 +15,15 @@ public class PlayerStats : MonoBehaviour
     public int Attack = 1;
     public float FireRate = 0f;
 
-    public Text playerText;
+    public GameObject playerInfo;
+
+    public void Powerup()
+    {
+        Health += 1;
+        Speed += 1;
+        Attack += 1;
+        FireRate += 0.2f;
+    }
 
 
     // Start is called before the first frame update
@@ -28,11 +36,15 @@ public class PlayerStats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        playerText.text = "HP: " + Health;
+        //playerText.text = "HP: " + Health;
 
-        if(Health <= 0)
-        {
-            SceneManager.LoadScene(2);
-        }
+        
     }
+
+    public void TakeDamage(int value)
+    {
+        playerInfo.GetComponent<PlayerHearts>().RemoveHearts(value);
+        Health -= value;
+    }
+
 }
