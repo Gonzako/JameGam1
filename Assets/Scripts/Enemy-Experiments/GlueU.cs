@@ -13,19 +13,21 @@ public class GlueU: MonoBehaviour
     public int shootinpoints;
 
     public GameObject target;
-    public float followDistance = 4f;
+    public float followDistance = 6f;
     public float speed = 4f;
     bool canWalk = true;
 
     public float lastShot;
     public float cooldown = 2f;
-    
+
+    public Animator anim;
     
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         target = GameObject.FindGameObjectWithTag("Player");
         lastShot = Time.time;
+        anim = transform.parent.GetComponentInChildren<Animator>();
     }
 
     void Update()
@@ -52,6 +54,7 @@ public class GlueU: MonoBehaviour
 
     public async void LineShoot()
     {
+        anim.Play("Attack");
         canWalk = false;
         for (int j = 0; j < 2; j++)
         {
@@ -67,10 +70,14 @@ public class GlueU: MonoBehaviour
             await Task.Delay(500);
         }
         canWalk = true;
+        anim.Play("Idle");
+
     }
 
     public async void CircleShoot()
     {
+        anim.Play("Attack");
+
         canWalk = false;
         circleShooter.right = (target.transform.position - transform.position).normalized;
 
@@ -87,6 +94,8 @@ public class GlueU: MonoBehaviour
             await Task.Delay(250);
         }
         canWalk = true;
+        anim.Play("Idle");
+
     }
 
     public void FollowPlayer()
@@ -101,5 +110,11 @@ public class GlueU: MonoBehaviour
         {
             rb.velocity = Vector2.zero;
         }
+    }
+
+
+    private void OnDestroy()
+    {
+        
     }
 }
