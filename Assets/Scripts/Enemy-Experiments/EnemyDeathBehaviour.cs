@@ -9,7 +9,7 @@ public class EnemyDeathBehaviour : MonoBehaviour
 
     public Color dieColor;
 
-
+    
 
 
     public void Update()
@@ -26,11 +26,7 @@ public class EnemyDeathBehaviour : MonoBehaviour
                 var item = Instantiate(PlayerReferencer.PlayerInstance.ItemHeads[Random.Range(0, 6)], this.transform.position, Quaternion.identity);
             }
 
-            if(GameObject.FindGameObjectWithTag("BGM").GetComponent<AudioSource>().isPlaying == false)
-            {
-                this.GetComponent<GlueU>().BOSS_UI.SetActive(false);
-                GameObject.FindGameObjectWithTag("BGM").GetComponent<AudioSource>().Play();
-            }
+            
 
 
             Destroy(this.transform.parent.gameObject);
@@ -41,7 +37,7 @@ public class EnemyDeathBehaviour : MonoBehaviour
     {
         if (collision.gameObject.layer == 6)
         {
-            Health -= 1;
+            Health -= collision.gameObject.GetComponent<Projectile>().Damage;
 
 
             this.GetComponent<AudioSource>().Play();

@@ -12,7 +12,7 @@ public class Projectile : MonoBehaviour
     private SpriteRenderer sr;
 
 
-
+    public int Damage = 1;
 
     void Start()
     {

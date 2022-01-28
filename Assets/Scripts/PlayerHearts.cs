@@ -24,12 +24,15 @@ public class PlayerHearts : MonoBehaviour
         
     }
 
-    public async void RemoveLastHeart()
+    public async void RemoveHearts(int value)
     {
-        var heartToRemove = this.transform.GetChild(this.transform.childCount - 1);
-        heartToRemove.gameObject.GetComponent<Animator>().Play("heart_melting");
-        await Task.Delay(500);
-        UpdateUI();
+        for(int i = 0; i < value; i++)
+        {
+            var heartToRemove = this.transform.GetChild(this.transform.childCount - 1);
+            heartToRemove.gameObject.GetComponent<Animator>().Play("heart_melting");
+            await Task.Delay(500);
+            UpdateUI();
+        }
     }
 
     public void UpdateUI()
