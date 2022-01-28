@@ -12,12 +12,36 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3253235185317405071, guid: c39c423cf9a8cb04596418da9f0efc2b, type: 3}
+      propertyPath: m_Size.x
+      value: 0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 3253235185317405071, guid: c39c423cf9a8cb04596418da9f0efc2b, type: 3}
+      propertyPath: m_Size.y
+      value: 0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 3253235185317405071, guid: c39c423cf9a8cb04596418da9f0efc2b, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -3173360728434293125, guid: f72b10d78339d1c4aa935ebc6564c9c0, type: 3}
+      objectReference: {fileID: -4035115690291344132, guid: 5e574c496bbe8da47a8eac98fc764521, type: 3}
+    - target: {fileID: 3253235185317405071, guid: c39c423cf9a8cb04596418da9f0efc2b, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3253235185317405071, guid: c39c423cf9a8cb04596418da9f0efc2b, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3253235185317405071, guid: c39c423cf9a8cb04596418da9f0efc2b, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3253235185317405071, guid: c39c423cf9a8cb04596418da9f0efc2b, type: 3}
       propertyPath: m_SortingOrder
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5399619538822770387, guid: c39c423cf9a8cb04596418da9f0efc2b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.701
       objectReference: {fileID: 0}
     - target: {fileID: 5929950571868019222, guid: c39c423cf9a8cb04596418da9f0efc2b, type: 3}
       propertyPath: m_Size.x
@@ -38,6 +62,14 @@ PrefabInstance:
     - target: {fileID: 6186132559900484475, guid: c39c423cf9a8cb04596418da9f0efc2b, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6208209865435483745, guid: c39c423cf9a8cb04596418da9f0efc2b, type: 3}
+      propertyPath: m_BodyType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6208209865435483745, guid: c39c423cf9a8cb04596418da9f0efc2b, type: 3}
+      propertyPath: m_GravityScale
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6208209865435483746, guid: c39c423cf9a8cb04596418da9f0efc2b, type: 3}
       propertyPath: m_Name

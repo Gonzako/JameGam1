@@ -85,6 +85,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: 1
+  deathParticle: {fileID: 0}
+  dieColor: {r: 0.882353, g: 0.52156866, b: 0.3019608, a: 0}
 --- !u!114 &4498096442832912789
 MonoBehaviour:
   m_ObjectHideFlags: 0

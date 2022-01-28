@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1418787606534288657}
   - component: {fileID: 1418787606534288656}
   - component: {fileID: 1418787606534288659}
+  - component: {fileID: 5814196361534014869}
   m_Layer: 0
   m_Name: DeathParticleDummy
   m_TagString: Untagged
@@ -1481,6 +1482,7 @@ ParticleSystem:
     rowMode: 1
     sprites:
     - sprite: {fileID: -3173360728434293125, guid: 5e574c496bbe8da47a8eac98fc764521, type: 3}
+    - sprite: {fileID: 2403273397336162568, guid: 5e574c496bbe8da47a8eac98fc764521, type: 3}
     flipU: 0
     flipV: 0
   VelocityModule:
@@ -4804,3 +4806,16 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &5814196361534014869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1418787606534288658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52bf727d25bf7df46814335ac857087b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particleColor: {r: 0.93725497, g: 0.63529414, b: 0.83921576, a: 0}

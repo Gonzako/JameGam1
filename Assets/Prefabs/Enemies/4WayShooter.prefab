@@ -230,7 +230,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: 5
-  deathParticle: {fileID: 2415132485323873647}
+  deathParticle: {fileID: 1418787606534288658, guid: 89faa4a3da6720341bb823f22171c443, type: 3}
+  dieColor: {r: 0.8078432, g: 0.09411766, b: 0.16078432, a: 0}
 --- !u!82 &8890817575469687713
 AudioSource:
   m_ObjectHideFlags: 0
