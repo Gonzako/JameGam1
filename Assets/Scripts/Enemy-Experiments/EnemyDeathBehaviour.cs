@@ -10,15 +10,25 @@ public class EnemyDeathBehaviour : MonoBehaviour
     public Color dieColor;
 
 
+
+
     public void Update()
     {
         if (Health <= 1)
         {
-
-
             var death = Instantiate(deathParticle, transform.position, Quaternion.identity);
             death.GetComponent<ParticleBehaviour>().particleColor = dieColor;
             GameObject.FindGameObjectWithTag("World").GetComponent<MainWorld>().EnemyKilled();
+
+            int random = Random.Range(0, 100);
+            if(random >= 90)
+            {
+                var item = Instantiate(PlayerReferencer.PlayerInstance.ItemHeads[Random.Range(0, 6)], this.transform.position, Quaternion.identity);
+            }
+
+
+
+
             Destroy(this.transform.parent.gameObject);
         }
     }

@@ -9,6 +9,13 @@ public class PlayerReferencer : MonoBehaviour
     [SerializeField]
     public Transform PlayerLogic;
 
+    [SerializeField]
+    public Transform PlayerHeadStack;
+
+    [SerializeField] 
+    public GameObject[] ItemHeads;
+
+
     private void OnEnable()
     {
         if (PlayerInstance != null)
