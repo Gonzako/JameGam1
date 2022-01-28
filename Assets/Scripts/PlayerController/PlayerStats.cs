@@ -20,9 +20,11 @@ public class PlayerStats : MonoBehaviour
     public void Powerup()
     {
         Health += 1;
-        Speed += 1;
+        Speed += 0.2f;
         Attack += 1;
-        FireRate += 0.2f;
+        FireRate += 2f;
+
+        this.GetComponent<playerShootInput>().shootSpeed += FireRate;
     }
 
 
