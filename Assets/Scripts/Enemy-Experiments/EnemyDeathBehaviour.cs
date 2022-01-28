@@ -21,7 +21,7 @@ public class EnemyDeathBehaviour : MonoBehaviour
             GameObject.FindGameObjectWithTag("World").GetComponent<MainWorld>().EnemyKilled();
 
             int random = Random.Range(0, 100);
-            if(random >= 90)
+            if(random >= 0)
             {
                 var item = Instantiate(PlayerReferencer.PlayerInstance.ItemHeads[Random.Range(0, 6)], this.transform.position, Quaternion.identity);
             }

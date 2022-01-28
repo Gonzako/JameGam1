@@ -294,7 +294,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 13
+  m_SortingOrder: 15
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
   m_Color: {r: 0.32894266, g: 0.9056604, b: 0.4673252, a: 1}
   m_FlipX: 0
@@ -675,6 +675,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: 50
   deathParticle: {fileID: 1418787606534288658, guid: 89faa4a3da6720341bb823f22171c443, type: 3}
+  dieColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!50 &1748321386244127519
 Rigidbody2D:
   serializedVersion: 4
