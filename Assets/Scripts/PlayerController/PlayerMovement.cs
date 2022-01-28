@@ -37,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
     {
         pStats = GetComponent<PlayerStats>();
         rb = GetComponent<Rigidbody2D>();
-        Debug.Log("Player Speed: " + pStats.speed);
+        Debug.Log("Player Speed: " + pStats.Speed);
     }
 
     // Update is called once per frame
@@ -61,7 +61,7 @@ public class PlayerMovement : MonoBehaviour
 
 
 
-        rb.velocity =( new Vector2(MovCurve.Evaluate(horizontalInput)*Mathf.Sign(horizontalInput), MovCurve.Evaluate(verticalInput)*Mathf.Sign(verticalInput)) * pStats.speed);
+        rb.velocity =( new Vector2(MovCurve.Evaluate(horizontalInput)*Mathf.Sign(horizontalInput), MovCurve.Evaluate(verticalInput)*Mathf.Sign(verticalInput)) * pStats.Speed);
 
         PlayerState moveState = playerAnimationController.GetMoveState(horizontalInput, verticalInput);
 

@@ -10,6 +10,7 @@ TagManager:
   - LevelTrigger
   - World
   - LeftBorderWall
+  - BGM
   layers:
   - Default
   - TransparentFX
