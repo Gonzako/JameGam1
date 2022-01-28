@@ -32,6 +32,11 @@ public class GlueU: MonoBehaviour
 
     void Update()
     {
+        if (target == null)
+        {
+            return;
+        }
+
         FollowPlayer();
        
           
@@ -40,10 +45,10 @@ public class GlueU: MonoBehaviour
             switch (Random.Range(0, 2))
             {
                 case 0:
-                    LineShoot();
+                    StartCoroutine(LineShoot());
                     break;
                 case 1:
-                    CircleShoot();
+                    StartCoroutine( CircleShoot());
                     break;
                 default:
                     // do nothing
@@ -52,7 +57,7 @@ public class GlueU: MonoBehaviour
         } 
     }
 
-    public async void LineShoot()
+    public IEnumerator LineShoot()
     {
         anim.Play("Attack");
         canWalk = false;
@@ -67,14 +72,14 @@ public class GlueU: MonoBehaviour
                 bullet.direction = lineShooter.GetChild(i).right;
             }
             lastShot = Time.time;
-            await Task.Delay(500);
+            yield return new WaitForSeconds(0.25f);
         }
         canWalk = true;
         anim.Play("Idle");
 
     }
 
-    public async void CircleShoot()
+    public IEnumerator CircleShoot()
     {
         anim.Play("Attack");
 
@@ -91,7 +96,7 @@ public class GlueU: MonoBehaviour
             }
             lastShot = Time.time;
 
-            await Task.Delay(250);
+            yield return new WaitForSeconds(0.25f);
         }
         canWalk = true;
         anim.Play("Idle");
@@ -115,6 +120,9 @@ public class GlueU: MonoBehaviour
 
     private void OnDestroy()
     {
-        
+        StopCoroutine(LineShoot());
+        StopCoroutine(CircleShoot());
+
+
     }
 }

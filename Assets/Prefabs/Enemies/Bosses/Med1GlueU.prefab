@@ -201,7 +201,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2050978832843479646}
-  - component: {fileID: 6405554105376674454}
   m_Layer: 9
   m_Name: Med1GlueU
   m_TagString: Enemy
@@ -225,20 +224,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6405554105376674454
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1979109433564465228}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f837523e0d5690c4b9e14292d78f9472, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawn1: {fileID: 1979109433564465228, guid: 8914f2a159da88445a34b17d7d631114, type: 3}
-  spawn2: {fileID: 1979109433564465228, guid: aa4fd8eb41608d443b657b4230de034f, type: 3}
 --- !u!1 &2905236667153303008
 GameObject:
   m_ObjectHideFlags: 0
@@ -636,6 +621,7 @@ GameObject:
   - component: {fileID: 1748321386244127519}
   - component: {fileID: 929198217307281038}
   - component: {fileID: 651561586774302225}
+  - component: {fileID: 1250124021533957418}
   m_Layer: 9
   m_Name: Logic
   m_TagString: Enemy
@@ -673,7 +659,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lineShooter: {fileID: 1974850771574510731}
   circleShooter: {fileID: 5231931440943617758}
-  bulletPrefab: {fileID: 6208209865435483744, guid: c39c423cf9a8cb04596418da9f0efc2b, type: 3}
+  bulletPrefab: {fileID: 6208209865435483744, guid: f078a3f71047a8841adff8ef5197d439, type: 3}
   shootinpoints: 0
   target: {fileID: 0}
   followDistance: 4.5
@@ -829,6 +815,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1250124021533957418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6180026377316141743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f837523e0d5690c4b9e14292d78f9472, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawn1: {fileID: 1979109433564465228, guid: 8914f2a159da88445a34b17d7d631114, type: 3}
+  spawn2: {fileID: 1979109433564465228, guid: aa4fd8eb41608d443b657b4230de034f, type: 3}
 --- !u!1 &6286735788384753179
 GameObject:
   m_ObjectHideFlags: 0

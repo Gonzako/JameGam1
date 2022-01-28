@@ -691,7 +691,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lineShooter: {fileID: 1974850771574510731}
   circleShooter: {fileID: 5231931440943617758}
-  bulletPrefab: {fileID: 6208209865435483744, guid: c39c423cf9a8cb04596418da9f0efc2b, type: 3}
+  bulletPrefab: {fileID: 6208209865435483744, guid: f078a3f71047a8841adff8ef5197d439, type: 3}
   shootinpoints: 0
   target: {fileID: 0}
   followDistance: 6
@@ -749,7 +749,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.48}
-  m_Size: {x: 1.09, y: 0.38}
+  m_Size: {x: 1.99, y: 0.79}
   m_Direction: 1
 --- !u!82 &651561586774302225
 AudioSource:

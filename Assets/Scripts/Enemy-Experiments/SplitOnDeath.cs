@@ -12,11 +12,15 @@ public class SplitOnDeath : MonoBehaviour
 
     private void OnDestroy()
     {
-        trans1 = new Vector3(randF(), randF(), 0f);
-        Instantiate(spawn1, transform.position + trans1, Quaternion.identity);
+        if (PlayerReferencer.PlayerInstance != null)
+        {
+            trans1 = new Vector3(randF(), randF(), 0f);
+            Instantiate(spawn1, transform.position + trans1, Quaternion.identity);
 
-        trans2 = new Vector3(randF(), randF(), 0f);
-        Instantiate(spawn2, transform.position + trans2, Quaternion.identity);
+            trans2 = new Vector3(randF(), randF(), 0f);
+            Instantiate(spawn2, transform.position + trans2, Quaternion.identity);
+        }
+        
     }
 
     private float randF()
