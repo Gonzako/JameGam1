@@ -5,6 +5,65 @@ using UnityEngine;
 
 public class ChargeAttack : MonoBehaviour
 {
+    public float speed = 4;
+    public GameObject target;
+    public Color bulletColor = Color.green;
+    Rigidbody2D rb;
+    public float minDistance = 3.5f;
+    public Transform explosionShooter;
+    public Projectile bulletPrefab;
+    public bool charging = false;
+    public List<GameObject> shootingPoints;
+
+
+
+    private void Start()
+    {
+        target = GameObject.FindGameObjectWithTag("Player");
+        rb = GetComponent<Rigidbody2D>();
+        
+    }
+
+    public void Update()
+    {
+        var dir = target.transform.position - transform.position;
+        if (dir.magnitude < minDistance && charging == false)
+        {
+            rb.velocity = dir.normalized * speed;
+            charging = true;
+        }
+        else if(charging == false && dir.magnitude > 15)
+        {
+            rb.velocity = Vector2.zero;
+        }
+
+    }
+
+    public async void Explosion()
+    {
+        explosionShooter.right = (target.transform.position - transform.position).normalized;
+
+        for (int j = 0; j < 2; j++)
+        {
+            for (int i = 0; i < shootingPoints.Count; i++)
+            {
+                // enemy has a list of points to shoot from
+                Projectile bullet = Instantiate(bulletPrefab, shootingPoints[i].transform.position, Quaternion.identity);
+                bullet.direction = shootingPoints[i].transform.right;
+            }
+
+            await Task.Delay(250);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        rb.velocity = Vector2.zero;
+        Explosion();
+        charging = false;
+    }
+
+    /*
     public GameObject target;
     public float speed = 12f;
     public Rigidbody2D rb;
@@ -78,6 +137,7 @@ public class ChargeAttack : MonoBehaviour
         Destroy(this.gameObject);
     }
 
-
+    */
 }
+
 

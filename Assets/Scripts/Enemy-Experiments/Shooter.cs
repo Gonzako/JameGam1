@@ -6,7 +6,7 @@ public class Shooter : MonoBehaviour
 {
     public GameObject bulletPrefab;
     public GameObject target;
-    public float cooldown = 1;
+    public float cooldown = 2f;
     public float lastFired;
     public Color bulletColor;
 

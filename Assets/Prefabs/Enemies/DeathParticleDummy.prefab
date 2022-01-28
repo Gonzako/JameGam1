@@ -4780,7 +4780,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -353079851
   m_SortingLayer: 3
-  m_SortingOrder: 6
+  m_SortingOrder: 14
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -4818,4 +4818,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52bf727d25bf7df46814335ac857087b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particleColor: {r: 0.93725497, g: 0.63529414, b: 0.83921576, a: 0}
+  particleColor: {r: 0.93725497, g: 0.63529414, b: 0.83921576, a: 0.5254902}

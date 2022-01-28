@@ -6,7 +6,7 @@ public class FourWayShooter : MonoBehaviour
 {
     public GameObject bulletPrefab;
     public GameObject target;
-    public float cooldown = 3;
+    public float cooldown = 1.5f;
     public float lastFired;
     public Color bulletColor;
 

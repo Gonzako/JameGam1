@@ -217,7 +217,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: 5
   deathParticle: {fileID: 1418787606534288658, guid: 89faa4a3da6720341bb823f22171c443, type: 3}
-  dieColor: {r: 1, g: 0.909804, b: 0.050980397, a: 0}
+  dieColor: {r: 1, g: 0.909804, b: 0.050980397, a: 0.5254902}
 --- !u!82 &2323128724070409354
 AudioSource:
   m_ObjectHideFlags: 0

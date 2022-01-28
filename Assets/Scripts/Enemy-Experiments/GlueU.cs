@@ -13,9 +13,12 @@ public class GlueU: MonoBehaviour
     public int shootinpoints;
 
     public GameObject target;
+    public float followDistance = 4f;
+    public float speed = 4f;
+    bool canWalk = true;
 
     public float lastShot;
-    public float cooldown = 4f;
+    public float cooldown = 2f;
     
     
     void Start()
@@ -27,9 +30,10 @@ public class GlueU: MonoBehaviour
 
     void Update()
     {
+        FollowPlayer();
        
-        lineShooter.right = (target.transform.position - transform.position).normalized;    
-        if (lastShot + cooldown < Time.time)
+          
+        if (lastShot + cooldown < Time.time && target != null)
         {
             switch (Random.Range(0, 2))
             {
@@ -46,19 +50,30 @@ public class GlueU: MonoBehaviour
         } 
     }
 
-    public void LineShoot()
+    public async void LineShoot()
     {
-        for (int i = 0; i < lineShooter.childCount; i++)
+        canWalk = false;
+        for (int j = 0; j < 2; j++)
         {
-            // enemy has a list of points to shoot from
-            Projectile bullet = Instantiate(bulletPrefab, lineShooter.GetChild(i).transform.position, Quaternion.identity);
-            bullet.direction = lineShooter.GetChild(i).right;
+            lineShooter.right = (target.transform.position - transform.position).normalized;
+
+            for (int i = 0; i < lineShooter.childCount; i++)
+            {
+                // enemy has a list of points to shoot from
+                Projectile bullet = Instantiate(bulletPrefab, lineShooter.GetChild(i).transform.position, Quaternion.identity);
+                bullet.direction = lineShooter.GetChild(i).right;
+            }
+            lastShot = Time.time;
+            await Task.Delay(500);
         }
-        lastShot = Time.time;
+        canWalk = true;
     }
 
     public async void CircleShoot()
     {
+        canWalk = false;
+        circleShooter.right = (target.transform.position - transform.position).normalized;
+
         for (int j = 0; j < 4; j++)
         {
             for (int i = 0; i < circleShooter.childCount; i++)
@@ -70,6 +85,21 @@ public class GlueU: MonoBehaviour
             lastShot = Time.time;
 
             await Task.Delay(250);
-        } 
+        }
+        canWalk = true;
+    }
+
+    public void FollowPlayer()
+    {
+        var dir = (target.transform.position - transform.position);
+
+        if(dir.magnitude > followDistance && dir.magnitude < 15 && canWalk == true)
+        {
+            rb.velocity = Vector2.MoveTowards(rb.velocity, dir.normalized * speed, speed * Time.deltaTime);
+        }
+        else
+        {
+            rb.velocity = Vector2.zero;
+        }
     }
 }
