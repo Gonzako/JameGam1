@@ -69,6 +69,8 @@ public class MainWorld : MonoBehaviour
 
     }
 
+    public GameObject BOSS;
+
     private void OnDisable()
     {
         BasicGameLogic.OnLevelEnter -= null;
@@ -79,8 +81,14 @@ public class MainWorld : MonoBehaviour
     {
         BasicGameLogic.OnLevelEnter += delegate
         {
+            // generate level
 
-            if(LevelIndex > 3)
+            if(LevelIndex == 4)
+            {
+                _obstaclesTileMap.SetTile(new Vector3Int(nextSegmentXPos, -3, 0), null);
+                GenerateBossRoom(nextSegmentXPos);
+            }
+            else if(LevelIndex > 6)
             {
                 LevelIndex = 0;
                 DeleteAllTiles();
@@ -95,12 +103,6 @@ public class MainWorld : MonoBehaviour
                 _obstaclesTileMap.SetTile(new Vector3Int(nextSegmentXPos, -3, 0), null);
                 GenerateNextSegment(nextSegmentXPos);
             }
-
-            if(LevelIndex == 4)
-            {
-                _obstaclesTileMap.SetTile(new Vector3Int(nextSegmentXPos, -3, 0), null);
-            }
-            
         };
 
         // generate simple room
@@ -117,15 +119,56 @@ public class MainWorld : MonoBehaviour
 
     }
 
+    void GenerateBossRoom(int startXPos)
+    {
+        levelEntered = false;
+        int segmentWidth = 25;
+
+        currentSegmentXPos = startXPos;
+        levelEntered = false;
+        nextSegmentXPos = startXPos + segmentWidth - 1;
+
+
+        for (int y = 0; y > -6; y--)
+        {
+            for(int x = currentSegmentXPos; x < currentSegmentXPos+segmentWidth; x++)
+            {
+                Vector3Int currentTilePos = new Vector3Int(x, y, 0);
+                if (y == 0)
+                {
+                    _obstaclesTileMap.SetTile(currentTilePos, seamTileGround);
+                }
+                else
+                {
+                    _baseGroundTileMap.SetTile(currentTilePos, baseTileGround);
+                    int random = Random.Range(0, 100);
+                    if (random >= 40)
+                    {
+                        _walkableObjectsTileMap.SetTile(currentTilePos, eyeCandy[Random.Range(0, eyeCandy.Length)]);
+                    }
+
+
+                }
+                if (x == currentSegmentXPos && y != 0 && y != -3) _obstaclesTileMap.SetTile(currentTilePos, tileCloudObstacle);
+
+                if (y == -5) _obstaclesTileMap.SetTile(currentTilePos, tileCloudObstacle);
+
+                if (x == currentSegmentXPos + segmentWidth - 1 && y != 0) _obstaclesTileMap.SetTile(currentTilePos, tileCloudObstacle);
+            }
+        }
+
+        
+
+    }
+
     void GenerateNextSegment(int startXPos)
     {
         currentSegmentXPos = startXPos;
         levelEntered = false;
         int segmentWidth = Random.Range(15, 30);
 
-
         nextSegmentXPos = startXPos + segmentWidth - 1;
-        Debug.Log(nextSegmentXPos);
+        //Debug.Log(nextSegmentXPos);
 
         for (int y = 0; y > -6; y--)
         {
@@ -180,11 +223,8 @@ public class MainWorld : MonoBehaviour
                 if (y == 0) _obstaclesTileMap.SetTile(currentTilePos, seamTileGround); else _baseGroundTileMap.SetTile(currentTilePos, baseTileGround);
             }
         }
-        
-        
 
-        //var levelTrigger = Instantiate(prefabLevelTrigger, new Vector3(startXPos + segmentWidth-2, -1.85f, 0), Quaternion.identity);
-        LevelIndex++;
+        
     }
 
     void GenerateWorldStart()
@@ -226,13 +266,23 @@ public class MainWorld : MonoBehaviour
         {
             if (_playerReference.GetComponentInChildren<PlayerMovement>().gameObject.transform.position.x >= currentSegmentXPos + 1)
             {
+                LevelIndex++;
                 _obstaclesTileMap.SetTile(new Vector3Int(currentSegmentXPos, -3, 0), tileCloudObstacle);
                 levelEntered = true;
-                int enemyCount = Random.Range(1, 5);
-                for (int i = 0; i < enemyCount; i++)
+
+                if(LevelIndex < 5)
                 {
-                    var enemy = Instantiate(enemyPrefabs[Random.Range(0, enemyPrefabs.Length)], new Vector3(Random.Range(currentSegmentXPos+2, nextSegmentXPos-2), Random.Range(-1, -2.5f), 0), Quaternion.identity);
-                    CurrentEnemeyCount += 1;
+                    int enemyCount = Random.Range(1, 5);
+                    for (int i = 0; i < enemyCount; i++)
+                    {
+                        var enemy = Instantiate(enemyPrefabs[Random.Range(0, enemyPrefabs.Length)], new Vector3(Random.Range(currentSegmentXPos + 2, nextSegmentXPos - 2), Random.Range(-1, -2.5f), 0), Quaternion.identity);
+                        CurrentEnemeyCount += 1;
+                    }
+                }
+                else if(LevelIndex == 5)
+                {
+                    var boss = Instantiate(BOSS, new Vector3(Random.Range(currentSegmentXPos + 2, nextSegmentXPos - 2), Random.Range(-1, -2.5f), 0), Quaternion.identity);
+                    GameObject.FindGameObjectWithTag("BGM").GetComponent<AudioSource>().Stop();
                 }
             }
         }
