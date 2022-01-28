@@ -19,17 +19,31 @@ public class GlueU: MonoBehaviour
 
     public float lastShot;
     public float cooldown = 2f;
-    
-    
+
+    public GameObject BOSS_UI;
+
+    private void Awake()
+    {
+        BOSS_UI = GameObject.FindGameObjectWithTag("CANVAS").transform.Find("BossFight").gameObject;
+    }
+
     void Start()
     {
+        BOSS_UI.SetActive(true);
         rb = GetComponent<Rigidbody2D>();
         target = GameObject.FindGameObjectWithTag("Player");
         lastShot = Time.time;
     }
 
+    void UpdateBossUI()
+    {
+
+    }
+
     void Update()
     {
+        UpdateBossUI();
+
         FollowPlayer();
        
           

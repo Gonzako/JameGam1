@@ -11,6 +11,8 @@ TagManager:
   - World
   - LeftBorderWall
   - BGM
+  - BOSS_FIGHT_UI
+  - CANVAS
   layers:
   - Default
   - TransparentFX

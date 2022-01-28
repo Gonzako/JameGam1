@@ -28,6 +28,7 @@ public class EnemyDeathBehaviour : MonoBehaviour
 
             if(GameObject.FindGameObjectWithTag("BGM").GetComponent<AudioSource>().isPlaying == false)
             {
+                this.GetComponent<GlueU>().BOSS_UI.SetActive(false);
                 GameObject.FindGameObjectWithTag("BGM").GetComponent<AudioSource>().Play();
             }
 
