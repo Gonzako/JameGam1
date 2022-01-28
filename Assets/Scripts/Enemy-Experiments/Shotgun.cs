@@ -12,6 +12,7 @@ public class Shotgun : MonoBehaviour
     float distance;
     public float followDistance = 5f;
 
+
     public float lastFired;
     public float cooldown = 2;
 
@@ -43,8 +44,6 @@ public class Shotgun : MonoBehaviour
                 ShootShotgun();
             }
         }
-
-        transform.parent.GetChild(1).transform.position = transform.position;
     }
 
     void ShootShotgun()

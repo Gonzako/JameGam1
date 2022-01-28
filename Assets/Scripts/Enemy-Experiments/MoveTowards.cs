@@ -32,7 +32,5 @@ public class MoveTowards : MonoBehaviour
         {
             rb.velocity = Vector2.zero;
         }
-
-        transform.parent.GetChild(1).transform.position = transform.position;
     }
 }
