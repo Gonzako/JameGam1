@@ -86,7 +86,7 @@ public class MainWorld : MonoBehaviour
             _obstaclesTileMap.SetTile(new Vector3Int(nextSegmentXPos, -3, 0), null);
             GenerateBossRoom(nextSegmentXPos);
         }
-        else if (LevelIndex > 6)
+        else if (LevelIndex > 5)
         {
             LevelIndex = 0;
             DeleteAllTiles();
