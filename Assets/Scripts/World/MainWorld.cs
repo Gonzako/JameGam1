@@ -50,6 +50,7 @@ public class MainWorld : MonoBehaviour
 
     public Text layerInfo;
 
+
     private void Awake()
     {
         _playerReference = GameObject.FindGameObjectWithTag("Player");
@@ -73,37 +74,40 @@ public class MainWorld : MonoBehaviour
 
     private void OnDisable()
     {
-        BasicGameLogic.OnLevelEnter -= null;
+        BasicGameLogic.OnLevelEnter -= OnEnterLevel;
+    }
+
+    private void OnEnterLevel()
+    {
+        // generate level
+
+        if (LevelIndex == 4)
+        {
+            _obstaclesTileMap.SetTile(new Vector3Int(nextSegmentXPos, -3, 0), null);
+            GenerateBossRoom(nextSegmentXPos);
+        }
+        else if (LevelIndex > 6)
+        {
+            LevelIndex = 0;
+            DeleteAllTiles();
+            _playerReference.GetComponentInChildren<PlayerMovement>().gameObject.transform.position = new Vector3(0, -2, 0);
+            GenerateWorldStart();
+            GenerateNextSegment(10);
+            leftBorderWall.transform.position = new Vector3(-25f, -1.75f, 0);
+            LayerIndex++;
+        }
+        else
+        {
+            _obstaclesTileMap.SetTile(new Vector3Int(nextSegmentXPos, -3, 0), null);
+            GenerateNextSegment(nextSegmentXPos);
+        }
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        BasicGameLogic.OnLevelEnter += delegate
-        {
-            // generate level
+        BasicGameLogic.OnLevelEnter += OnEnterLevel;
 
-            if(LevelIndex == 4)
-            {
-                _obstaclesTileMap.SetTile(new Vector3Int(nextSegmentXPos, -3, 0), null);
-                GenerateBossRoom(nextSegmentXPos);
-            }
-            else if(LevelIndex > 6)
-            {
-                LevelIndex = 0;
-                DeleteAllTiles();
-                _playerReference.GetComponentInChildren<PlayerMovement>().gameObject.transform.position = new Vector3(0, -2, 0);
-                GenerateWorldStart();
-                GenerateNextSegment(10);
-                leftBorderWall.transform.position = new Vector3(-25f, -1.75f, 0);
-                LayerIndex++;
-            }
-            else
-            {
-                _obstaclesTileMap.SetTile(new Vector3Int(nextSegmentXPos, -3, 0), null);
-                GenerateNextSegment(nextSegmentXPos);
-            }
-        };
 
         // generate simple room
         Vector3Int roomStartPosition = new Vector3Int(-9, 0, 0);
