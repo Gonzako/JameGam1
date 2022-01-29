@@ -282,7 +282,7 @@ public class MainWorld : MonoBehaviour
 
                 if(LevelIndex < 5)
                 {
-                    int enemyCount = Random.Range(1, 5);
+                    int enemyCount = Random.Range(1+LevelIndex+LayerIndex, 5+LevelIndex+LayerIndex);
                     for (int i = 0; i < enemyCount; i++)
                     {
 
