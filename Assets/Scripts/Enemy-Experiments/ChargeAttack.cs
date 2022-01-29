@@ -5,11 +5,12 @@ using UnityEngine;
 
 public class ChargeAttack : MonoBehaviour
 {
-    public float speed = 4;
+    public float speed = 1.5f;
     public GameObject target;
     public Color bulletColor = Color.green;
     Rigidbody2D rb;
     public float minDistance = 3.5f;
+    public float maxDistance = 6f;
     public Transform explosionShooter;
     public Projectile bulletPrefab;
     public bool charging = false;
@@ -21,39 +22,35 @@ public class ChargeAttack : MonoBehaviour
     {
         target = GameObject.FindGameObjectWithTag("Player");
         rb = GetComponent<Rigidbody2D>();
-        
     }
 
     public void Update()
     {
-        var dir = target.transform.position - transform.position;
-        if (dir.magnitude < minDistance && charging == false)
+        
+        if (target != null)
         {
-            rb.velocity = dir.normalized * speed;
-            charging = true;
+            rb.velocity = (target.transform.position - transform.position).normalized * speed;
         }
-        else if(charging == false && dir.magnitude > 15)
+        else
         {
             rb.velocity = Vector2.zero;
         }
+        
 
     }
 
-    public async void Explosion()
+    public void Explosion()
     {
         explosionShooter.right = (target.transform.position - transform.position).normalized;
 
-        for (int j = 0; j < 2; j++)
+       
+        for (int i = 0; i < shootingPoints.Count; i++)
         {
-            for (int i = 0; i < shootingPoints.Count; i++)
-            {
-                // enemy has a list of points to shoot from
-                Projectile bullet = Instantiate(bulletPrefab, shootingPoints[i].transform.position, Quaternion.identity);
-                bullet.direction = shootingPoints[i].transform.right;
-            }
-
-            await Task.Delay(250);
+            // enemy has a list of points to shoot from
+            Projectile bullet = Instantiate(bulletPrefab, shootingPoints[i].transform.position, Quaternion.identity);
+            bullet.direction = shootingPoints[i].transform.right;
         }
+        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

@@ -8,6 +8,7 @@ public class Shotgun : MonoBehaviour
     public int speed = 7;
     public Rigidbody2D rb;
     public Projectile bulletPrefab;
+    Animator anim;
 
     float distance;
     public float followDistance = 5f;
@@ -24,6 +25,7 @@ public class Shotgun : MonoBehaviour
         target = GameObject.FindGameObjectWithTag("Player");
         rb = GetComponent<Rigidbody2D>();
         lastFired = Time.time;
+        anim = transform.parent.GetComponentInChildren<Animator>();
         
     }
 
@@ -35,12 +37,14 @@ public class Shotgun : MonoBehaviour
         if (target != null && distance > followDistance)
         {
             rb.velocity = (target.transform.position - transform.position).normalized * speed;
+            anim.Play("Roll");
         }
         else
         {
             rb.velocity = Vector2.zero;
             if (lastFired + cooldown < Time.time) // see if cooldown time has passed
             {
+                anim.Play("Idle");
                 ShootShotgun();
             }
         }

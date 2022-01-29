@@ -477,8 +477,12 @@ MonoBehaviour:
   followDistance: 4
   speed: 3
   lastShot: 0
-  cooldown: 6
+  cooldown: 3
+  BOSS_UI: {fileID: 0}
+  healthBar: {fileID: 0}
   anim: {fileID: 0}
+  myDeathBehaviour: {fileID: 0}
+  MaxHealth: 50
 --- !u!114 &4080217571755345406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -491,7 +495,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7b1b05359083b14d977cb667df7f923, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 20
+  Health: 30
   deathParticle: {fileID: 1418787606534288658, guid: 89faa4a3da6720341bb823f22171c443, type: 3}
   dieColor: {r: 0.13136347, g: 0.6792453, b: 0.14065053, a: 0.7294118}
 --- !u!50 &1748321386244127519
