@@ -123,6 +123,36 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &146823851
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 4424105895838912594, guid: 2fba9183b0cc6ce42bbfe4493984ea86, type: 3}
+  m_PrefabInstance: {fileID: 849241703}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 146823852}
+  m_Layer: 0
+  m_Name: 'BaggieBoy (Missing Prefab with guid: 2fba9183b0cc6ce42bbfe4493984ea86)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &146823852
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 4424105895838912597, guid: 2fba9183b0cc6ce42bbfe4493984ea86, type: 3}
+  m_PrefabInstance: {fileID: 849241703}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 146823851}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &299991055 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3003966837332867120, guid: 9421841d605c5e349a61a981f859b2ff, type: 3}

@@ -7,6 +7,8 @@ public class PlayerHitDetection : MonoBehaviour
 {
     public static event Action<int> OnPlayerHit = null;
 
+    public bool canBeHit = true;
+    
     private void Start()
     {
         PlayerHitDetection.OnPlayerHit += PlayerDamaged; // for testing purposes, it is refenrencing itself, but it should work
@@ -14,8 +16,20 @@ public class PlayerHitDetection : MonoBehaviour
 
     private void PlayerDamaged(int value)
     {
-        Debug.Log("player takes damage");
-        PlayerStats.PlayerStatsInstance.TakeDamage(value);
+        if(canBeHit == true)
+        {
+            Debug.Log("player takes damage");
+            PlayerStats.PlayerStatsInstance.TakeDamage(value);
+            canBeHit = false;
+            StartCoroutine(nameof(PlayerInvicibility));
+        }
+    }
+
+    IEnumerator PlayerInvicibility()
+    {
+        yield return new WaitForSeconds(2f);
+        canBeHit = true;
+        yield break;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
