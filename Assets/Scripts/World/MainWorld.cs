@@ -281,7 +281,23 @@ public class MainWorld : MonoBehaviour
                     int enemyCount = Random.Range(1, 5);
                     for (int i = 0; i < enemyCount; i++)
                     {
-                        var enemy = Instantiate(enemyPrefabs[Random.Range(0, enemyPrefabs.Length)], new Vector3(Random.Range(currentSegmentXPos + 2, nextSegmentXPos - 2), Random.Range(-1, -2.5f), 0), Quaternion.identity);
+
+                        // look for possible position => dont spawn inside obstacles
+
+                        bool foundPosition = false;
+                        Vector3Int newEnemyPos = new Vector3Int(Random.Range(currentSegmentXPos + 2, nextSegmentXPos - 2), (int)Random.Range(-1, -2.5f), 0);
+                        while (foundPosition == false)
+                        {
+
+                            var cellPos = _obstaclesTileMap.WorldToCell(newEnemyPos);
+                            if(_obstaclesTileMap.GetTile(cellPos) == null)
+                            {
+                                foundPosition = true;
+                                break;
+                            }
+                            newEnemyPos = new Vector3Int(Random.Range(currentSegmentXPos + 2, nextSegmentXPos - 2), (int)Random.Range(-1, -2.5f), 0);
+                        }
+                        var enemy = Instantiate(enemyPrefabs[Random.Range(0, enemyPrefabs.Length)], newEnemyPos, Quaternion.identity);
                         CurrentEnemeyCount += 1;
                     }
                 }
