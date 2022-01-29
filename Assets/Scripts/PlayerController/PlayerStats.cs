@@ -50,8 +50,8 @@ public class PlayerStats : MonoBehaviour
 
     public void TakeDamage(int value)
     {
-        playerInfo.GetComponent<PlayerHearts>().RemoveHearts(value);
         Health -= value;
+        playerInfo.GetComponent<PlayerHearts>().RemoveHearts(value);
     }
 
     private void OnDisable()
