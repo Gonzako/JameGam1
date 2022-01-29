@@ -715,7 +715,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7b1b05359083b14d977cb667df7f923, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 80
+  Health: 85
   deathParticle: {fileID: 1418787606534288658, guid: 89faa4a3da6720341bb823f22171c443, type: 3}
   dieColor: {r: 0.28439835, g: 0.7264151, b: 0.3333151, a: 0.72156864}
 --- !u!50 &1748321386244127519

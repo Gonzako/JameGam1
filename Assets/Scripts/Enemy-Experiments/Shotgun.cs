@@ -39,15 +39,21 @@ public class Shotgun : MonoBehaviour
             rb.velocity = (target.transform.position - transform.position).normalized * speed;
             anim.Play("Roll");
         }
+        else if(lastFired + cooldown < Time.time) // see if cooldown time has passed
+        {
+            
+            ShootShotgun();
+            rb.velocity = Vector2.zero;
+        }
         else
         {
-            rb.velocity = Vector2.zero;
-            if (lastFired + cooldown < Time.time) // see if cooldown time has passed
+            if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
             {
-                anim.Play("Idle");
-                ShootShotgun();
+                    anim.Play("Idle");
             }
+            rb.velocity = Vector2.zero;
         }
+
     }
 
     void ShootShotgun()
@@ -55,6 +61,7 @@ public class Shotgun : MonoBehaviour
        
         if (target != null)
         {
+            anim.Play("Attack");
             for (int i = 0; i < 3; i++)
             {
 

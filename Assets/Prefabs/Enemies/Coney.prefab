@@ -257,7 +257,7 @@ MonoBehaviour:
   speed: 2
   rb: {fileID: 8719586682416525998}
   bulletPrefab: {fileID: 6208209865435483744, guid: d089266e69acb7847a4334eb9c2b4ba5, type: 3}
-  followDistance: 4.5
+  followDistance: 5
   lastFired: 0
   cooldown: 1.7
   targetShooter: {fileID: 1588619958}
