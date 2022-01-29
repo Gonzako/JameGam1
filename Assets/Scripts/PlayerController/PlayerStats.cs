@@ -25,6 +25,10 @@ public class PlayerStats : MonoBehaviour
         FireRate += 2f;
 
         this.GetComponent<playerShootInput>().shootSpeed += FireRate;
+
+        // todo update ui
+        var playerInfo = GameObject.FindGameObjectWithTag("CANVAS").transform.Find("PlayerInfo").gameObject;
+        playerInfo.GetComponent<PlayerHearts>().UpdateUI();
     }
 
 

@@ -26,11 +26,19 @@ public class EnemyDeathBehaviour : MonoBehaviour
                 var item = Instantiate(PlayerReferencer.PlayerInstance.ItemHeads[Random.Range(0, 6)], this.transform.position, Quaternion.identity);
             }
 
-            
-
 
             Destroy(this.transform.parent.gameObject);
         }
+
+
+        // kill all enemies if they are out of bounds
+        if (this.transform.position.y >= 0.52f || this.transform.position.y <= -5.18f)
+        {
+            GameObject.FindGameObjectWithTag("World").GetComponent<MainWorld>().EnemyKilled();
+            Destroy(this.transform.parent.gameObject);
+        }
+        
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -38,7 +46,6 @@ public class EnemyDeathBehaviour : MonoBehaviour
         if (collision.gameObject.layer == 6)
         {
             Health -= collision.gameObject.GetComponent<Projectile>().Damage;
-
 
             this.GetComponent<AudioSource>().Play();
         }

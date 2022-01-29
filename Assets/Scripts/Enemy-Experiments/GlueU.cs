@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Threading.Tasks;
-
+using UnityEngine.UI;
 
 public class GlueU: MonoBehaviour
 {
@@ -22,11 +22,26 @@ public class GlueU: MonoBehaviour
 
     public GameObject BOSS_UI;
 
+    public Image healthBar;
+
     public Animator anim;
+
+    public EnemyDeathBehaviour myDeathBehaviour;
+
+
+    public int MaxHealth = 50;
+
 
     private void Awake()
     {
+        myDeathBehaviour = this.GetComponent<EnemyDeathBehaviour>();
+
         BOSS_UI = GameObject.FindGameObjectWithTag("CANVAS").transform.Find("BossFight").gameObject;
+
+        healthBar = BOSS_UI.transform.Find("BarBack").transform.GetChild(0).gameObject.GetComponent<Image>();
+
+        MaxHealth = myDeathBehaviour.Health;
+
     }
 
     void Start()
@@ -38,8 +53,19 @@ public class GlueU: MonoBehaviour
         anim = transform.parent.GetComponentInChildren<Animator>();
     }
 
+    public void CalculateHealth()
+    {
+        var test = ((float)myDeathBehaviour.Health / MaxHealth) * 100;
+
+        Debug.Log(test + "%");
+
+        healthBar.fillAmount = test / 100;
+    }
+
     void Update()
     {
+        CalculateHealth();
+
         if (target == null)
         {
             return;
@@ -128,6 +154,8 @@ public class GlueU: MonoBehaviour
 
     private void OnDestroy()
     {
+        BOSS_UI.SetActive(false);
+
         StopCoroutine(LineShoot());
         StopCoroutine(CircleShoot());
 

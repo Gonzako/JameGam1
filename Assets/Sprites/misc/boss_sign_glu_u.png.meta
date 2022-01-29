@@ -1,7 +1,28 @@
 fileFormatVersion: 2
 guid: eae3f2c9e4cc0ae469d05b3a89034777
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -7567715448177562005
+    second: boss_sign_glu_u_0
+  - first:
+      213: 8464201293042113479
+    second: boss_sign_glu_u_1
+  - first:
+      213: 7750350014367534288
+    second: boss_sign_glu_u_2
+  - first:
+      213: 4492444170626093840
+    second: boss_sign_glu_u_3
+  - first:
+      213: -968542252464603181
+    second: boss_sign_glu_u_4
+  - first:
+      213: -6998855547519294569
+    second: boss_sign_glu_u_5
+  - first:
+      213: 815612891746472001
+    second: boss_sign_glu_u_6
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -32,7 +53,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -41,7 +62,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -75,9 +96,168 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: boss_sign_glu_u_0
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 36
+        width: 266
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6ee32635e21af690800000000000000
+      internalID: -7567715448177562005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_sign_glu_u_1
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 25
+        width: 126
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cb5d231b32e67570800000000000000
+      internalID: 8464201293042113479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_sign_glu_u_2
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 15
+        width: 126
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dc02536646ce8b60800000000000000
+      internalID: 7750350014367534288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_sign_glu_u_3
+      rect:
+        serializedVersion: 2
+        x: 710
+        y: 7
+        width: 126
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0135173db2e585e30800000000000000
+      internalID: 4492444170626093840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_sign_glu_u_4
+      rect:
+        serializedVersion: 2
+        x: 850
+        y: 5
+        width: 126
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dff3e3f3fb0f82f0800000000000000
+      internalID: -968542252464603181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_sign_glu_u_5
+      rect:
+        serializedVersion: 2
+        x: 990
+        y: 0
+        width: 126
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79327d706f11fde90800000000000000
+      internalID: -6998855547519294569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_sign_glu_u_6
+      rect:
+        serializedVersion: 2
+        x: 1130
+        y: 2
+        width: 126
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14017ce8a93a15b00800000000000000
+      internalID: 815612891746472001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
