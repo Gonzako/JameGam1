@@ -31,7 +31,15 @@ public class PlayerHearts : MonoBehaviour
             var heartToRemove = this.transform.GetChild(this.transform.childCount - 1);
             heartToRemove.gameObject.GetComponent<Animator>().Play("heart_melting");
             await Task.Delay(500);
-            UpdateUI();
+            if(playerStats.Health > 0)
+            {
+                UpdateUI();
+            }
+            else
+            {
+                SceneManager.LoadScene(2);
+            }
+            
         }
     }
 
