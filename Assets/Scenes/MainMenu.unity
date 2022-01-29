@@ -5724,7 +5724,7 @@ GameObject:
   - component: {fileID: 733953640}
   - component: {fileID: 733953639}
   m_Layer: 5
-  m_Name: Image
+  m_Name: FallingPlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
