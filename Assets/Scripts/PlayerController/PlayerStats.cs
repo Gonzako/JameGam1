@@ -32,6 +32,7 @@ public class PlayerStats : MonoBehaviour
     void Start()
     {
         instance = this;
+        PlayerHitDetection.OnPlayerHit += TakeDamage;
     }
 
 
@@ -47,6 +48,11 @@ public class PlayerStats : MonoBehaviour
     {
         playerInfo.GetComponent<PlayerHearts>().RemoveHearts(value);
         Health -= value;
+    }
+
+    private void OnDisable()
+    {
+        PlayerHitDetection.OnPlayerHit -= TakeDamage;
     }
 
 }

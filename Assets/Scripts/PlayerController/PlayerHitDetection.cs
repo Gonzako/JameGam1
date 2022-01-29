@@ -22,7 +22,14 @@ public class PlayerHitDetection : MonoBehaviour
     {
         if(collision.transform.gameObject.layer == 8)  // 8 = EnemyBullets Collision Layer
         {
-            OnPlayerHit?.Invoke(collision.gameObject.GetComponent<Projectile>().Damage);
+            if( collision.gameObject.TryGetComponent(out Projectile projectile))
+            OnPlayerHit?.Invoke(projectile.Damage);
+            else if (collision.gameObject.TryGetComponent(out FallingProjectile fallProjectile))
+            OnPlayerHit?.Invoke(1);
+        }
+        else if(collision.transform.gameObject.layer == 9)
+        {
+            OnPlayerHit?.Invoke(1);
         }
     }
 

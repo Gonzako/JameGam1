@@ -9,6 +9,7 @@ public class FourWayShooter : MonoBehaviour
     public float cooldown = 1.5f;
     public float lastFired;
     public Color bulletColor;
+    public Animator anim;
 
 
     Vector2[] shootingDirections = { Vector2.up, Vector2.right, Vector2.down, Vector2.left };
@@ -38,7 +39,7 @@ public class FourWayShooter : MonoBehaviour
 
             bullet.GetComponent<Projectile>().color = bulletColor;
 
-
+            anim.Play("Attack");
         }
         
         lastFired = Time.time;

@@ -25,6 +25,6 @@ public class SplitOnDeath : MonoBehaviour
 
     private float randF()
     {
-        return Random.Range(0f, 2.5f);
+        return Random.Range(-1f, 1f);
     }
 }

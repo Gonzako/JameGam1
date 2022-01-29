@@ -5,7 +5,7 @@ using UnityEngine;
 public class MoveTowards : MonoBehaviour
 {
     public GameObject target;
-    public int speed = 7;
+    public float speed = 1.3f;
     public Rigidbody2D rb;
     public Color bulletColor;
 
@@ -15,7 +15,7 @@ public class MoveTowards : MonoBehaviour
     private void Start()
     {
 
-        target = GameObject.FindGameObjectWithTag("Player");
+        target = PlayerReferencer.PlayerInstance.PlayerLogic.gameObject;
 
         rb = GetComponent<Rigidbody2D>();
     }
