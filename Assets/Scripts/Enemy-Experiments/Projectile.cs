@@ -15,6 +15,8 @@ public class Projectile : MonoBehaviour
 
     public float Damage = 1;
 
+    public GameObject particles = null;
+
     void Start()
     {
 
@@ -35,23 +37,17 @@ public class Projectile : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-
-        // ignore player and other Bullets
-        if(collision.transform.CompareTag("Player") || collision.transform.CompareTag("Projectile"))
-            Physics2D.IgnoreCollision(collision.transform.GetChild(0).gameObject.GetComponent<Collider2D>(), this.transform.GetChild(0).gameObject.GetComponent<Collider2D>());
-        
-        else //if (collision.transform.gameObject.layer == 0 ) // destroy if it hits environment
+        if(particles != null)
         {
-            // todo: implement enemy system (example: collision.gameObject.GetComponent<Enemy>().HitEnemy(damageValue);  )
-            
-            Destroy(this.gameObject);
+            var p = Instantiate(particles, transform.position, Quaternion.identity);
         }
             
+        Destroy(this.gameObject);
     }
 
     IEnumerator DespawnTimer(float lifetime)
     {
         yield return new WaitForSeconds(lifetime);
-        Destroy(this.transform.gameObject);
+        Destroy(this.gameObject);
     }
 }

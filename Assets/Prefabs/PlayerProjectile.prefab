@@ -59,10 +59,26 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: 0.0026859757
       objectReference: {fileID: 0}
+    - target: {fileID: 6136583399364100762, guid: c39c423cf9a8cb04596418da9f0efc2b, type: 3}
+      propertyPath: m_Radius
+      value: 0.28361392
+      objectReference: {fileID: 0}
+    - target: {fileID: 6136583399364100762, guid: c39c423cf9a8cb04596418da9f0efc2b, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.005479574
+      objectReference: {fileID: 0}
+    - target: {fileID: 6136583399364100762, guid: c39c423cf9a8cb04596418da9f0efc2b, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.36940742
+      objectReference: {fileID: 0}
     - target: {fileID: 6186132559900484475, guid: c39c423cf9a8cb04596418da9f0efc2b, type: 3}
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 6208209865435483744, guid: c39c423cf9a8cb04596418da9f0efc2b, type: 3}
+      propertyPath: particles
+      value: 
+      objectReference: {fileID: 1418787606534288658, guid: 89faa4a3da6720341bb823f22171c443, type: 3}
     - target: {fileID: 6208209865435483744, guid: c39c423cf9a8cb04596418da9f0efc2b, type: 3}
       propertyPath: candy_bullets.Array.size
       value: 0

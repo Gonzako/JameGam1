@@ -82,53 +82,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &6186132559900484475
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5399619538822770387}
-  - component: {fileID: 5929950571868019222}
-  m_Layer: 8
-  m_Name: HitBox
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5399619538822770387
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6186132559900484475}
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0.43, z: 0}
-  m_LocalScale: {x: 1.6055685, y: 1.0000954, z: 1.5475361}
-  m_Children: []
-  m_Father: {fileID: 6208209865435483749}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
---- !u!70 &5929950571868019222
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6186132559900484475}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.07, y: 0}
-  m_Size: {x: 0.3, y: 0.3}
-  m_Direction: 0
 --- !u!1 &6208209865435483746
 GameObject:
   m_ObjectHideFlags: 0
@@ -141,6 +94,7 @@ GameObject:
   - component: {fileID: 6208209865435483744}
   - component: {fileID: 6208209865435483745}
   - component: {fileID: 7410376286780498167}
+  - component: {fileID: 6136583399364100762}
   m_Layer: 8
   m_Name: Projectile
   m_TagString: Untagged
@@ -159,7 +113,6 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
-  - {fileID: 5399619538822770387}
   - {fileID: 202226103506484129}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -303,6 +256,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!58 &6136583399364100762
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6208209865435483746}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0032270253, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.335421
 --- !u!1 &8584746034557339199
 GameObject:
   m_ObjectHideFlags: 0
@@ -415,5 +384,5 @@ Transform:
   - {fileID: 6237557391378921007}
   - {fileID: 8738473068674305474}
   m_Father: {fileID: 6208209865435483749}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

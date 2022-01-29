@@ -302,14 +302,14 @@ public class MainWorld : MonoBehaviour
                             newEnemyPos = new Vector3Int(Random.Range(currentSegmentXPos + 2, nextSegmentXPos - 2), (int)Random.Range(-1, -2.5f), 0);
                         }
                         var enemy = Instantiate(enemyPrefabs[Random.Range(0, enemyPrefabs.Length)], newEnemyPos, Quaternion.identity);
-                        enemy.GetComponentInChildren<EnemyDeathBehaviour>().Health = enemy.GetComponentInChildren<EnemyDeathBehaviour>().Health + LevelIndex*5 + LayerIndex*5;
+                        enemy.GetComponentInChildren<EnemyDeathBehaviour>().Health = enemy.GetComponentInChildren<EnemyDeathBehaviour>().Health + LevelIndex*3 + LayerIndex*3;
                         CurrentEnemeyCount += 1;
                     }
                 }
                 else if(LevelIndex == 5)
                 {
                     var boss = Instantiate(BOSS, new Vector3(Random.Range(currentSegmentXPos + 2, nextSegmentXPos - 2), Random.Range(-1, -2.5f), 0), Quaternion.identity);
-                    boss.GetComponentInChildren<EnemyDeathBehaviour>().Health = boss.GetComponentInChildren<EnemyDeathBehaviour>().Health + LevelIndex*5 + LayerIndex*5;
+                    boss.GetComponentInChildren<EnemyDeathBehaviour>().Health = boss.GetComponentInChildren<EnemyDeathBehaviour>().Health + LevelIndex*3 + LayerIndex*3;
                     GameObject.FindGameObjectWithTag("BGM").GetComponent<AudioSource>().Stop();
                     GameObject.FindGameObjectWithTag("BOSSBGM").GetComponent<AudioSource>().Play();
                     CurrentEnemeyCount += 7;

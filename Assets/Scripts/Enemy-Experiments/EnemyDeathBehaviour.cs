@@ -9,8 +9,6 @@ public class EnemyDeathBehaviour : MonoBehaviour
 
     public Color dieColor;
 
-    
-
 
     public void Update()
     {
@@ -25,7 +23,6 @@ public class EnemyDeathBehaviour : MonoBehaviour
             {
                 var item = Instantiate(PlayerReferencer.PlayerInstance.ItemHeads[Random.Range(0, 6)], this.transform.position, Quaternion.identity);
             }
-
 
             Destroy(this.transform.parent.gameObject);
         }

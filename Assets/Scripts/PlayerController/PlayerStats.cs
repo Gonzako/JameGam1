@@ -10,8 +10,8 @@ public class PlayerStats : MonoBehaviour
 
     public static PlayerStats PlayerStatsInstance { get { return instance; } }
 
-    public int Health = 4;
-    public float Speed = 5f;
+    public int Health = 5;
+    public float Speed = 3f;
     public float Attack = 1;
     public float FireRate = 0f;
 
