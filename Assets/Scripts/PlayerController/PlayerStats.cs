@@ -36,7 +36,7 @@ public class PlayerStats : MonoBehaviour
     void Start()
     {
         instance = this;
-        PlayerHitDetection.OnPlayerHit += TakeDamage;
+       // PlayerHitDetection.OnPlayerHit += TakeDamage;
     }
 
 
@@ -56,7 +56,7 @@ public class PlayerStats : MonoBehaviour
 
     private void OnDisable()
     {
-        PlayerHitDetection.OnPlayerHit -= TakeDamage;
+        //PlayerHitDetection.OnPlayerHit -= TakeDamage;
     }
 
 }

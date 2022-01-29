@@ -18,7 +18,7 @@ public class PlayerHitDetection : MonoBehaviour
     {
         if(canBeHit == true)
         {
-           //PlayerStats.PlayerStatsInstance.TakeDamage(value);
+           PlayerStats.PlayerStatsInstance.TakeDamage(value);
            StartCoroutine(nameof(PlayerInvicibility));
         }
     }
