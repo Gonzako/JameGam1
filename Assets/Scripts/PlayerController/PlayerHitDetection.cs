@@ -21,14 +21,14 @@ public class PlayerHitDetection : MonoBehaviour
             Debug.Log("player takes damage");
             PlayerStats.PlayerStatsInstance.TakeDamage(value);
 
-           // StartCoroutine(nameof(PlayerInvicibility));
+           StartCoroutine(nameof(PlayerInvicibility));
         }
     }
 
     IEnumerator PlayerInvicibility()
     {
         canBeHit = false;
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3f);
         canBeHit = true;
         
     }
