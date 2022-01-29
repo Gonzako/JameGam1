@@ -20,16 +20,17 @@ public class PlayerHitDetection : MonoBehaviour
         {
             Debug.Log("player takes damage");
             PlayerStats.PlayerStatsInstance.TakeDamage(value);
-            canBeHit = false;
-            StartCoroutine(nameof(PlayerInvicibility));
+
+           // StartCoroutine(nameof(PlayerInvicibility));
         }
     }
 
     IEnumerator PlayerInvicibility()
     {
+        canBeHit = false;
         yield return new WaitForSeconds(2f);
         canBeHit = true;
-        yield break;
+        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
