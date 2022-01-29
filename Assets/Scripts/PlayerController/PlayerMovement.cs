@@ -119,13 +119,7 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.transform.CompareTag("LeftBorderWall"))
-        {
-            SceneManager.LoadScene(2);
-        }
-    }
+    
 
 
 }

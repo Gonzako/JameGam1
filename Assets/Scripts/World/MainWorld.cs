@@ -160,9 +160,6 @@ public class MainWorld : MonoBehaviour
                 if (x == currentSegmentXPos + segmentWidth - 1 && y != 0) _obstaclesTileMap.SetTile(currentTilePos, tileCloudObstacle);
             }
         }
-
-        
-
     }
 
     void GenerateNextSegment(int startXPos)
@@ -266,9 +263,13 @@ public class MainWorld : MonoBehaviour
 
         layerInfo.text = "Level: " + LevelIndex + " / Layer: " + LayerIndex;
 
-        leftBorderWall.transform.position = new Vector3(leftBorderWall.transform.position.x+1.1f*Time.deltaTime, leftBorderWall.transform.position.y, leftBorderWall.transform.position.z);
-        
         if(levelEntered == false)
+        {
+            leftBorderWall.transform.position = new Vector3(leftBorderWall.transform.position.x + 2.2f * Time.deltaTime, leftBorderWall.transform.position.y, leftBorderWall.transform.position.z);
+
+        }
+
+        if (levelEntered == false)
         {
             if (_playerReference.GetComponentInChildren<PlayerMovement>().gameObject.transform.position.x >= currentSegmentXPos + 1)
             {
