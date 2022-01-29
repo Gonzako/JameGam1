@@ -8,6 +8,7 @@ public class MoveTowards : MonoBehaviour
     public float speed = 1.3f;
     public Rigidbody2D rb;
     public Color bulletColor;
+    public float keepDistance;
 
 
     // Update is called once per frame
@@ -26,7 +27,7 @@ public class MoveTowards : MonoBehaviour
     {
         if(target != null)
         {
-            if ((target.transform.position - this.transform.position).sqrMagnitude < 2 * 1.5f)
+            if ((target.transform.position - this.transform.position).sqrMagnitude < keepDistance)
             {
                 // the player is within a radius of 3 units to this game object
                 rb.velocity = Vector2.zero;
