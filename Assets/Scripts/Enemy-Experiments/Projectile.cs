@@ -11,17 +11,24 @@ public class Projectile : MonoBehaviour
     public Color color;
     private SpriteRenderer sr;
 
+    public Sprite[] candy_bullets;
 
     public int Damage = 1;
 
     void Start()
     {
-       
+
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = direction.normalized * speed;
         sr = GetComponentInChildren<SpriteRenderer>();
         sr.transform.up = direction.normalized;
         sr.color = color;
+
+        if (candy_bullets.Length > 0)
+        {
+            sr.sprite = candy_bullets[Random.Range(0, candy_bullets.Length)];
+        }
+
         StartCoroutine(DespawnTimer(7f));
     }
 

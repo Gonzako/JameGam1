@@ -63,6 +63,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 6208209865435483744, guid: c39c423cf9a8cb04596418da9f0efc2b, type: 3}
+      propertyPath: candy_bullets.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6208209865435483745, guid: c39c423cf9a8cb04596418da9f0efc2b, type: 3}
       propertyPath: m_BodyType
       value: 1

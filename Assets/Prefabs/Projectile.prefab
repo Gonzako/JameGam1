@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8738473068674305474
 Transform:
   m_ObjectHideFlags: 0
@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2187611003492974735}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.368, z: 0}
+  m_LocalPosition: {x: 0, y: -0.5, z: 0}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 202226103506484129}
@@ -180,6 +180,11 @@ MonoBehaviour:
   direction: {x: 1, y: 1}
   speed: 4
   color: {r: 1, g: 1, b: 1, a: 1}
+  candy_bullets:
+  - {fileID: 3673083907406231988, guid: 429b6487ce463fb4eb7396b43710b6f3, type: 3}
+  - {fileID: 9040939122582222518, guid: 429b6487ce463fb4eb7396b43710b6f3, type: 3}
+  - {fileID: 7872644965013552351, guid: 429b6487ce463fb4eb7396b43710b6f3, type: 3}
+  - {fileID: 3855960119131410249, guid: 429b6487ce463fb4eb7396b43710b6f3, type: 3}
   Damage: 1
 --- !u!50 &6208209865435483745
 Rigidbody2D:
@@ -323,8 +328,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8584746034557339199}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.143, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_LocalPosition: {x: 0, y: -0.349, z: 0}
+  m_LocalScale: {x: 5.5293775, y: 5.5293775, z: 5.5293775}
   m_Children: []
   m_Father: {fileID: 202226103506484129}
   m_RootOrder: 0
@@ -369,7 +374,7 @@ SpriteRenderer:
   m_SortingLayerID: -1051861405
   m_SortingLayer: 4
   m_SortingOrder: 20
-  m_Sprite: {fileID: 21300000, guid: 2ee75625248986049be1aa7c9756991b, type: 3}
+  m_Sprite: {fileID: 6527350920937156296, guid: 429b6487ce463fb4eb7396b43710b6f3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

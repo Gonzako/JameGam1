@@ -256,7 +256,10 @@ public class MainWorld : MonoBehaviour
             if (CurrentEnemeyCount <= 0)
             {
                 if(GameObject.FindGameObjectWithTag("BGM").GetComponent<AudioSource>().isPlaying == false)
+                {
                     GameObject.FindGameObjectWithTag("BGM").GetComponent<AudioSource>().Play();
+                    GameObject.FindGameObjectWithTag("BOSSBGM").GetComponent<AudioSource>().Stop();
+                }
                 _playerReference.transform.parent.GetComponent<BasicGameLogic>().BeginNextLevel();
             }
         }
@@ -306,6 +309,7 @@ public class MainWorld : MonoBehaviour
                 {
                     var boss = Instantiate(BOSS, new Vector3(Random.Range(currentSegmentXPos + 2, nextSegmentXPos - 2), Random.Range(-1, -2.5f), 0), Quaternion.identity);
                     GameObject.FindGameObjectWithTag("BGM").GetComponent<AudioSource>().Stop();
+                    GameObject.FindGameObjectWithTag("BOSSBGM").GetComponent<AudioSource>().Play();
                     CurrentEnemeyCount += 7;
                 }
             }
