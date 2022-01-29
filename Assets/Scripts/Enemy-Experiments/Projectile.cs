@@ -13,7 +13,7 @@ public class Projectile : MonoBehaviour
 
     public Sprite[] candy_bullets;
 
-    public int Damage = 1;
+    public float Damage = 1;
 
     void Start()
     {

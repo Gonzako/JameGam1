@@ -37,7 +37,7 @@ public class PlayerHitDetection : MonoBehaviour
         if(collision.transform.gameObject.layer == 8)  // 8 = EnemyBullets Collision Layer
         {
             if( collision.gameObject.TryGetComponent(out Projectile projectile))
-            OnPlayerHit?.Invoke(projectile.Damage);
+            OnPlayerHit?.Invoke((int)projectile.Damage);
             else if (collision.gameObject.TryGetComponent(out FallingProjectile fallProjectile))
             OnPlayerHit?.Invoke(1);
         }

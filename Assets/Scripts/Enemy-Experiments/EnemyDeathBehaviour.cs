@@ -45,7 +45,7 @@ public class EnemyDeathBehaviour : MonoBehaviour
     {
         if (collision.gameObject.layer == 6)
         {
-            Health -= collision.gameObject.GetComponent<Projectile>().Damage;
+            Health -= (int)collision.gameObject.GetComponent<Projectile>().Damage;
 
             this.GetComponent<AudioSource>().Play();
         }
