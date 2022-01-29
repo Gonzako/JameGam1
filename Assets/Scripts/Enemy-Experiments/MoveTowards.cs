@@ -26,7 +26,17 @@ public class MoveTowards : MonoBehaviour
     {
         if(target != null)
         {
-            rb.velocity =  (target.transform.position - transform.position).normalized * speed;
+            if ((target.transform.position - this.transform.position).sqrMagnitude < 2 * 1.5f)
+            {
+                // the player is within a radius of 3 units to this game object
+                rb.velocity = Vector2.zero;
+            }
+            else
+            {
+                rb.velocity = (target.transform.position - transform.position).normalized * speed;
+            }
+
+            
         }
         else
         {
