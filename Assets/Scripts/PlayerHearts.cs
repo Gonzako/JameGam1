@@ -24,25 +24,6 @@ public class PlayerHearts : MonoBehaviour
         
     }
 
-    public async void RemoveHearts(int value)
-    {
-        for(int i = 0; i < value; i++)
-        {
-            var heartToRemove = this.transform.GetChild(this.transform.childCount - 1);
-            heartToRemove.gameObject.GetComponent<Animator>().Play("heart_melting");
-            await Task.Delay(500);
-            if(playerStats.Health > 0)
-            {
-                UpdateUI();
-            }
-            else
-            {
-                SceneManager.LoadScene(2);
-            }
-            
-        }
-    }
-
     public void UpdateUI()
     {
         for(int i = 0; i < this.transform.childCount; i++)
@@ -51,11 +32,6 @@ public class PlayerHearts : MonoBehaviour
         }
 
         int hp = playerStats.Health;
-
-        if (hp <= 0)
-        {
-            SceneManager.LoadScene(2);
-        }
 
         for (int i = 0; i < hp; i++)
         {

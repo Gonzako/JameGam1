@@ -45,13 +45,16 @@ public class PlayerStats : MonoBehaviour
     {
         //playerText.text = "HP: " + Health;
 
-        
+        if(Health <= 0)
+        {
+            SceneManager.LoadScene(2);
+        }
+
     }
 
     public void TakeDamage(int value)
     {
         Health -= value;
-        playerInfo.GetComponent<PlayerHearts>().RemoveHearts(value);
     }
 
     private void OnDisable()

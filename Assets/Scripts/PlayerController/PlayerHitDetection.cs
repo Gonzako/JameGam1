@@ -8,7 +8,9 @@ public class PlayerHitDetection : MonoBehaviour
     public static event Action<int> OnPlayerHit = null;
 
     public bool canBeHit = true;
-    
+
+    public GameObject playerInfo;
+
     private void Start()
     {
         PlayerHitDetection.OnPlayerHit += PlayerDamaged; // for testing purposes, it is refenrencing itself, but it should work
@@ -20,6 +22,7 @@ public class PlayerHitDetection : MonoBehaviour
         {
            PlayerStats.PlayerStatsInstance.TakeDamage(value);
            StartCoroutine(nameof(PlayerInvicibility));
+           playerInfo.GetComponent<PlayerHearts>().UpdateUI();
         }
     }
 
